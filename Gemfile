@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 4.1.5'
+gem 'rails', '~> 4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use Bootstrap Theme for CSS Engine
+gem 'bootstrap-sass', '~> 3.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,10 +40,13 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Bootstrap Theme
-gem 'bootstrap-sass', '~> 3.3.1'
-
 # Autoprefixer Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules using values from the Can I Use.
 # his gem provides Ruby and Ruby on Rails integration with this JavaScript tool.
 gem 'autoprefixer-rails'
+
+# Use angularjs-rails for front-end
+gem 'angularjs-rails', '~> 1.3.3'
+
+# Use devise for flexible authentication solution for Rails.
+gem 'devise', '~> 3.4.1'
 
