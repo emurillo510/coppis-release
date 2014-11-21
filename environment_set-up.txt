@@ -1,0 +1,16 @@
+1] set-up correct version of ruby.
+
+http://railsapps.github.io/installrubyonrails-mac.html
+
+$ rvm get stable --autolibs=enable
+$ rvm install ruby
+$ rvm --default use ruby-2.1.8
+
+2] update gem
+
+http://railsapps.github.io/installrubyonrails-mac.html
+
+$ gem -v
+2.2.2
+
+$ gem update --system

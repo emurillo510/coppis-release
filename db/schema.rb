@@ -13,13 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20141121033343) do
 
-  create_table "comments", force: true do |t|
+  create_table "comment", force: true do |t|
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
+  create_table "post", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "vote_count"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20141121033343) do
     t.datetime "updated_at"
   end
 
-  create_table "products", force: true do |t|
+  create_table "product", force: true do |t|
     t.string   "title"
     t.text     "detail"
     t.decimal  "price"
