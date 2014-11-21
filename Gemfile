@@ -41,9 +41,6 @@ gem 'spring',        group: :development
 # Bootstrap Theme
 gem 'bootstrap-sass', '~> 3.3.1'
 
-# Sass about
-gem 'sass-rails', '>= 3.2'
-
 # Autoprefixer Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules using values from the Can I Use.
 # his gem provides Ruby and Ruby on Rails integration with this JavaScript tool.
 gem 'autoprefixer-rails'
