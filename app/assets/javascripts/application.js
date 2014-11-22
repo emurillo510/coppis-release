@@ -12,13 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-// require turbolinks removed
 //= require angular
-//= require angular-animate
-//= require angular-resource
-//= require angular-cookies
-//= require angular-touch
-//= require angular-sanitize
-//= require angular-route
+//= require bootstrap-sprockets
 //= require_tree .
+
+
+var myModule = angular.module('Coppis', []);
+
+
+myModule.controller('MainCtrl', function($scope) { 
+  $scope.posts = [
+            {vote_count:'201', product_name:'Nike Air Force 1.' , brand_name: 'Nike' , comment_count: '20'},
+            {vote_count:'120', product_name:'Bomber Jacket.' , brand_name: 'Bomber' , comment_count: '2'},
+            {vote_count:'16',  product_name:'Adidas Campus.' , brand_name: 'Adidas' , comment_count: '16'},
+            {vote_count:'69',  product_name:'Puma Suede.' , brand_name: 'Puma' , comment_count: '91'},
+            {vote_count:'810', product_name:'Dope Hat.' , brand_name: 'Blackscale' , comment_count: '45'},
+            {vote_count:'413', product_name:'Savs Shirt.' , brand_name: 'Savs' , comment_count: '8'},
+        ];    
+});

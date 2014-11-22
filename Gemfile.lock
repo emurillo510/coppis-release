@@ -152,7 +152,7 @@ DEPENDENCIES
   jquery-rails
   minitest (~> 5.4.3)
   omniauth (~> 1.2.2)
-  omniauth-twitter (>= 1.1.0)
+  omniauth-twitter (~> 1.1.0)
   pg
   rails (~> 4.1.8)
   rails_12factor

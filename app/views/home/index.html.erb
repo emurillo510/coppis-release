@@ -1,6 +1,26 @@
-<div>
-  <label>Name:</label>
-  <input type="text" ng-model="yourName" placeholder="Enter a name here" autofocus>
-  <hr>
-  <h1>Hello {{yourName}}!</h1>
-</div>
+<!-- post wrapper -->
+<ul class="posts-group">
+	<!-- start of post -->
+	<li class="post" ng-repeat="post in posts">
+	
+  		<!-- upvote div -->
+  		<div class="upvote">
+    			<a href="#" class="upvote-link"></a>
+    			<span class="vote-count">{{post.vote_count}}</span>
+  		</div>
+
+  	<!-- url this will be the image -->
+  	<div class="url">
+   		<!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
+  		<span class="post-tagline description">{{post.product_name}}</span><br>
+  		<span class="post-brandname brand-name">{{post.brand_name}}</span>
+  	</div>
+
+  	<a href="/posts/naminum" class="view-discussion">
+  	  <p class="comment-count">{{post.comment_count}} comments</p>
+  	</a>
+
+  	</div>
+  	</div></span><br>
+  	</li>
+</ul>
