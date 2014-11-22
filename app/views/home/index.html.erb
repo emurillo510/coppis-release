@@ -5,8 +5,8 @@
   <li class="post " ng-repeat="post in posts">
   
     <!-- upvote div -->
-    <div class="upvote">
-        <a href="#" class="upvote-link"><span class="glyphicon glyphicon-chevron-up voted" aria-hidden="true"></a><br>
+    <div class="upvote" ng-click="upVote(post)">
+        <a href="#" class="upvote-link" ><span class="glyphicon glyphicon-chevron-up voted" aria-hidden="true"></a><br>
         <span class="vote-count">{{post.vote_count}}</span>
     </div>
 
@@ -19,6 +19,7 @@
 
   <div class="post-user">
     <span>submitted by </span><span class="post-username user-name">{{post.user_name}}</span>
+    <span class="timestamp">{{post.last_post}} ago</span>
   </div>
 
   <a href="/posts/naminum" class="view-discussion">
