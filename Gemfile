@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+#gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -49,6 +49,13 @@ gem 'autoprefixer-rails'
 
 # Use angularjs-rails for front-end
 gem 'angularjs-rails', '~> 1.3.3'
+
+# Use angularjs-file-upload-rails for Angular File Upload is a module for the AngularJS framework.
+
+gem 'angularjs-file-upload-rails', '~> 1.1.0'
+
+# Use angular-ui-bootstra-rails for bootstrap components written in pure AngularJS by the AngularUI Team.
+gem 'angular-ui-bootstrap-rails', '~> 0.11.2'
 
 # Use devise for flexible authentication solution for Rails.
 gem 'devise', '~> 3.4.1'
