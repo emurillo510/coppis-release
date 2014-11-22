@@ -1,10 +1,11 @@
+Type these if you need help getting correct version of ruby and rails with ruby version manager(rvm)
 1] set-up correct version of ruby.
 
 http://railsapps.github.io/installrubyonrails-mac.html
 
-$ rvm get stable --autolibs=enable
-$ rvm install ruby
-$ rvm --default use ruby-2.1.8
+rvm install ruby-2.1.4
+
+rvm use ruby-2.1.4
 
 2] update gem
 
