@@ -3,56 +3,92 @@
  *You can use JavaScript in this file.
 */
 
+var myModule = angular.module('Coppis', ["ui.bootstrap"]);
+
+
+myModule.controller('MainCtrl', function($scope) { 
+  $scope.posts = [
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},{vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'},
+            {vote_count:'120', product_name:'Shark Reflector Full Zip Hoodie' , brand_name: '(Bape)' , comment_count: '20', user_name: 'jordandrew'},
+            {vote_count:'45', product_name:'Ben Baller x Diamond Eye Mary T-Shirt' , brand_name: '(Diamond Supply Co)' , comment_count: '33', user_name: 'Nigo'},
+            {vote_count:'89', product_name:'Staple x Natural Varsity Jacket' , brand_name: '(Staple)' , comment_count: '44', user_name: 'Ben Baller'},
+            {vote_count:'44', product_name:'Vincent Zip Hoody' , brand_name: '(Undefeated)' , comment_count: '18', user_name: 'taylor_meadow'},
+            {vote_count:'70', product_name:'Honofknlulu T-Shirt' , brand_name: '(Black Label)' , comment_count: '12', user_name: 'blacklabelhi'}
+
+        ];    
+});
+
 /* navbar button controller */
-angular.module('ui.bootstrap.demo').controller('ButtonsCtrl', function ($scope) {
+angular.module('ui.bootstrap').controller('ButtonsCtrl', function ($scope) {
 
 	$scope.radioModel = 'Popular';
 
-});
-
-
-/* popup to request login */
-
-angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($scope, $modal, $log) {
-
-  $scope.items = ['item1', 'item2', 'item3'];
-
-  $scope.open = function (size) {
-
-    var modalInstance = $modal.open({
-      templateUrl: 'myModalContent.html',
-      controller: 'ModalInstanceCtrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-});
-
-// Please note that $modalInstance represents a modal window (instance) dependency.
-// It is not the same as the $modal service used above.
-
-angular.module('ui.bootstrap.demo').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
-
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
-  };
-
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
 });

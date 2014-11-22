@@ -16,6 +16,23 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # General Settings (Added from tutorial)
+  config.app_domain = 'somedomain.com'
+
+  # Email (Added from tutorial)
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: config.app_domain }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com', 
+    port: '587',
+    enable_starttls_auto: true,
+    user_name: 'someuser',
+    password: 'somepass',
+    authentication: :plain,
+    domain: 'somedomain.com'
+  }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -37,4 +54,10 @@ Rails.application.configure do
 
   # Autoload lib/ folder including all subdirectories
 config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+# action_mailer devise told me to put it here
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+
 end

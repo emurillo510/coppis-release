@@ -63,6 +63,7 @@ gem 'devise', '~> 3.4.1'
 # Use Omniauth for integration with Twitter, Facebook, Linkedin
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-twitter', '~>  1.1.0'
+gem 'omniauth-instagram', '~> 1.0.1'
 
 
 # Development Environment Set-Up
