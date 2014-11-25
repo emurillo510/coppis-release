@@ -3,11 +3,9 @@
 one:
   title: MyString
   description: MyText
-  vote_count: 
-  img: MyString
+  vote_count: 1
 
 two:
   title: MyString
   description: MyText
-  vote_count: 
-  img: MyString
+  vote_count: 1
