@@ -7,6 +7,8 @@ gem 'rails', '~> 4.1.8'
 #gem 'sqlite3'
 # Use Bootstrap Theme for CSS Engine
 gem 'bootstrap-sass', '~> 3.3.1'
+# Use Bootstrap Forms - Twitter Bootstrap Form helpers
+gem 'bootstrap-form', '~> 3.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

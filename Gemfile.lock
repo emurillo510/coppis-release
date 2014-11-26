@@ -29,6 +29,9 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
+    bootstrap-form (3.0.0)
+      actionpack (> 3.2)
+      railties (> 3.2)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
     builder (3.2.2)
@@ -160,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap-form (~> 3.0.0)
   bootstrap-sass (~> 3.3.1)
   coffee-rails (~> 4.0.0)
   devise (~> 3.4.1)

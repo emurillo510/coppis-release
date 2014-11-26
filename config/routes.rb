@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :brands
+
+  resources :products
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :posts
 
