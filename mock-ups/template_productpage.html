@@ -1,0 +1,254 @@
+
+<!-- this here is a template for front-page of site. -->
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Coppis Front Page</title>
+
+	<!-- reference style classes and ids here -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style>
+		#some-id {display:none;}
+		
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+		.container-fluid {
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.post {
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.upvote {
+			background-color: #ecf0f1;
+			width: 50px;
+			height: 60px;
+			text-align: center;
+			padding-top: 6px;
+			border-radius: 4px;
+			float: left;
+			margin-right: 20px;
+			-webkit-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+			-moz-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+			box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+		}
+		.glyphicon-chevron-up {
+			font-size: 1.5em;
+			color: #95a5a6;
+			
+		}
+		.voted {
+			color: #d35400;
+		}
+		.description {
+			font-size: 1.5em;
+			margin-right: 4px;
+		}
+		.brand-name {
+			color: #7f8c8d;
+			font-weight: 700;
+		}
+		.url {
+		}
+		.user-name {
+			font-weight: 700;
+			color: #7f8c8d;
+			font-size: .8em;
+		}
+		.comment-count {
+			font-size: .8em;
+			font-weight: 700;
+			line-height: 2em;
+		}	
+		ul {
+			list-style-type: none;
+		}
+		.profile-container {
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+			-webkit-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+			-moz-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+			box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+			background-color: #ecf0f1;
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+		}
+		.profile-avatar {
+			width: 100px;
+			height: 100px;
+			background: red;
+			float: left;
+			margin-top: 24px;
+			margin-right: 20px;
+		}
+		.profile-info {
+			margin-top: 20px;
+		}
+		.profile-name{
+			font-size: 1.5em;
+			font-weight: 700;
+		}
+		.profile-description {
+			color: #7f8c8d;
+		}
+		.post-container {
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 40px;
+		}
+		.post-photo img {
+			margin-bottom: 20px;
+			border-radius: 4px;
+		}
+		.user-photo img {
+			border-radius: 2px;
+			margin-right: 10px;
+			float: left;
+		}
+		.section {
+			margin-left: 70px;
+			margin-top: 40px;
+		}
+		.section-title {
+			color: #7f8c8d;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+		.comment-user {
+			font-weight: 700;
+			color: #7f8c8d;
+		}
+		.timestamp {
+			color: #7f8c8d;
+			font-size: .8em;
+		}
+		.comment {
+			margin-left: 50px;
+			margin-bottom: 20px;
+		}
+	</style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Coppis</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Popular<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Recent</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Submit</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- post container -->
+<div class="post-container">
+  <div class="post-photo"><!--<%= image_tag @profile.avatar.url(:medium) %>--><img src="http://photon.101medialablimit.netdna-cdn.com/hypebeast.com/image/2014/10/a-closer-look-at-the-supreme-x-nike-2014-fall-winter-air-force-1-1.jpg?w=780" height="400" width="600"></div>
+  <!-- start of post -->
+		<!-- upvote div -->
+		<div class="upvote">
+  			<a href="#" class="upvote-link"><span class="glyphicon glyphicon-chevron-up voted" aria-hidden="true"></a><br>
+  			<span class="vote-count">201</span>
+		</div>
+
+	<!-- url this will be the image -->
+	<div class="url">
+ 		<!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
+		<span class="post-tagline description">Supreme x Nike Air Force 1 "Red"</span>
+		<span class="post-brandname brand-name">(Supreme)</span>
+	</div>
+
+	<div class="post-user">
+		<span>submitted by </span><span class="post-username user-name">jordandrew</span><span> </span><span class="timestamp">3 hours ago</span>
+	</div>
+
+	<div class="section post-links">
+		<div class="section-title">Related Links</div>
+		<div class="link-title">A Closer Look at the Supreme x Nike 2014 Fall/Winter Air Force 1 "Red" (hypebeast.com)</div>
+	</div>
+
+	<!--<div class="section post-upvotes">
+		<div class="section-title">201 Upvotes</div>
+		<div class="user-photo">
+			<img src="http://api.randomuser.me/portraits/men/17.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/30.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/49.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/21.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/19.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/32.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/10.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/11.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/12.jpg" height="40" width="40">
+			<img src="http://api.randomuser.me/portraits/men/39.jpg" height="40" width="40">
+		</div>
+	</div>-->
+
+	<div class="section post-comments">
+		<div class="section-title">90 Comments</div>
+		
+		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/40.jpg" height="40" width="40"></span><span class="comment-user">jordandrew</span><span class="timestamp"> 3 hours ago</span>
+		<div class="comment">Tousled retro Banksy fanny pack banjo vegan. You probably haven't heard of them Brooklyn readymade heirloom, banh mi Williamsburg plaid taxidermy semiotics wayfarers. Master cleanse 90's Banksy, street art small batch whatever brunch cronut cliche 8-bit VHS.</div>
+		
+		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/49.jpg" height="40" width="40"></span><span class="comment-user">hipstertom</span><span class="timestamp"> 2 hours ago</span>
+		<div class="comment">Kitsch raw denim Wes Anderson flexitarian, biodiesel normcore gluten-free lomo Kickstarter pour-over tattooed street art bespoke pug.</div>
+
+		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/47.jpg" height="40" width="40"></span><span class="comment-user">hypekills</span><span class="timestamp"> 40 mins ago</span>
+		<div class="comment">Tumblr fixie DIY Marfa Neutra tote bag Pitchfork, scenester cornhole. Heirloom sriracha wayfarers PBR paleo, food truck flexitarian photo booth authentic bitters meggings Carles viral Williamsburg.</div>
+
+		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/53.jpg" height="40" width="40"></span><span class="comment-user">coolstorybro</span><span class="timestamp"> 15 mins ago</span>
+		<div class="comment">McSweeney's tousled Pinterest, sustainable PBR food truck Schlitz keffiyeh fingerstache farm-to-table. </div>
+
+		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/88.jpg" height="40" width="40"></span><span class="comment-user">yeezyknows</span><span class="timestamp"> 3 mins ago</span>
+		<div class="comment">Literally leggings deep v shabby chic freegan. Ennui selfies 3 wolf moon Neutra gluten-free beard, viral tote bag meh gastropub heirloom sustainable DIY. Pickled squid typewriter, fingerstache gluten-free bespoke tousled banjo chillwave iPhone.</div>
+
+		<form role="form"
+			<div class="form-group">
+			  <textarea class="form-control" rows="1" id="comment" placeholder="Join the conversation"></textarea>
+			  <br>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	</div></span><br>
+	<!-- end of post -->
+</div>
+<!-- end of post container -->
+<!-- post wrapper -->
+</body>
