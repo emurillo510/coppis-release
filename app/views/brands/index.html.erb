@@ -1,31 +1,50 @@
-<h1>Listing brands</h1>
-
-<table>
-  <thead>
+<!-- profile container -->
+<div class="profile-container">
+  <div class="profile-avatar"><img src="http://fontmeme.com/images/Supreme-Logo.jpg" height="100" width="100"></div>
+  <table class="profile-info">
     <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th>Img</th>
-      <th colspan="3"></th>
+      <td class="profile-name">Supreme</td>
     </tr>
-  </thead>
+    <tr>
+      <td>New York, NY</td>
+    </tr>
+    <tr>
+      <td>supremenewyork.com</td>
+    </tr>
+    <tr>
+      <td class="profile-description">Over its twenty year history, Supreme has worked with some of our generation's most groundbreaking designers, artists, photographers and musicians - all who have helped continue to define its unique idendity and attitude.</td>
+    </tr>
+  </table>
+</div>
+<!-- end of profile container -->
 
-  <tbody>
-    <% @brands.each do |brand| %>
-      <tr>
-        <td><%= brand.name %></td>
-        <td><%= brand.location %></td>
-        <td><%= brand.description %></td>
-        <td><%= brand.img %></td>
-        <td><%= link_to 'Show', brand %></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul class="posts-group">
+  
+  <!-- start of post -->
+  <li class="post ">
+  
+    <!-- upvote div -->
+    <div class="upvote">
+        <a href="#" class="upvote-link"><span class="glyphicon glyphicon-chevron-up voted" aria-hidden="true"></a><br>
+        <span class="vote-count">201</span>
+    </div>
 
-<br>
+  <!-- url this will be the image -->
+  <div class="url">
+    <!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
+    <span class="post-tagline description">Supreme x Nike Air Force 1 "Red"</span>
+    <span class="post-brandname brand-name">(Supreme)</span>
+  </div>
 
-<%= link_to 'New Brand', new_brand_path %>
+  <div class="post-user">
+    <span>submitted by </span><span class="post-username user-name">jordandrew</span><span> </span><span class="timestamp">3 hours ago</span>
+  </div>
+
+  <a href="/posts/naminum" class="view-discussion">
+    <p class="comment-count">90 comments</p>
+  </a>
+
+  </div>
+  </div></span><br>
+  </li> <!-- end of post -->
+</ul>
