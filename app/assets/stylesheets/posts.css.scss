@@ -1,3 +1,51 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-new-wrapper{
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+
+}
+
+.post-new-content{
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #e74c3c;
+	padding: 40px;
+	border-radius: 10px;
+	margin-top: 0px;
+
+}
+
+.post-new-content h1, h3{
+	color:white;
+	font-size: 28px;
+	margin-top: 10px;
+}
+
+.form-control{
+	height: 33px;
+	font-size: 14px;
+}
+
+.btn-success{
+	height: 50px;
+	font-size: 18px;
+	margin-left: 500px;
+	float: right;
+}
+
+.help-block{
+	float:right;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.help-block span{
+	text-decoration: underline ;
+	color: blue;
+}

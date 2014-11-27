@@ -56,6 +56,9 @@ gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-twitter', '~>  1.1.0'
 gem 'omniauth-instagram', '~> 1.0.1'
 
+# Use paperclip for Easy upload management for ActiveRecord
+gem 'paperclip', '~> 4.2.0'
+
 
 # Development Environment Set-Up
 group :development, :test do

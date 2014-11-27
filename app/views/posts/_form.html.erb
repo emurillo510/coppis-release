@@ -1,8 +1,14 @@
-<%= form_for(@post) do |f| %>
+<!-- wrapper for submit new post -->
+<div class = "post-new-content">
+<h1> Find a design you want others to see?</h1>
+<h3> Post it here! </h3>
+</div>
+
+<div class = "post-new-wrapper">
+<%= form_for @post , html: {role: "form"} do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,38 +18,39 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title , placeholder: " Design Name " %>
   </div>
   <div class="field">
-    <%= f.label :product_name %><br>
-    <%= f.text_field :product_name %>
+    <%= f.text_field :brand_name, placeholder: " Brand Name " %>
   </div>
-  <div class="field">
-    <%= f.label :brand_name %><br>
-    <%= f.text_field :brand_name %>
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Photo</label>
+    <input type="file" id="exampleInputFile">
   </div>
   <div class="field">
     <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
+    <%= f.text_field :user_name , placeholder: " This won't be here "%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description , placeholder: " This won't be here "   %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment , placeholder: " This won't be here " %>
   </div>
   <div class="field">
     <%= f.label :vote_count %><br>
-    <%= f.number_field :vote_count %>
+    <%= f.number_field :vote_count , placeholder: " This won't be here " %>
   </div>
   <div class="field">
-    <%= f.label :comment_count %><br>
-    <%= f.number_field :comment_count %>
+    <%= f.label :comment_count  %><br>
+    <%= f.number_field :comment_count , placeholder: " This won't be here "%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' , :class => 'btn btn-success' %>
   </div>
+  <p class="help-block">Check out our <span>guidlines</span> for posting</p> 
+
 <% end %>
+</div>

@@ -3,13 +3,14 @@
 <head>
   <title>Coppis: Discover Brands, Discover Fashion.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application", media: "all" , "data-turbolinks-track" => true%>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <!-- should get locally --><link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<%= user_signed_in? %>
 <%= render "layouts/partials/header" %>
 <%# render "layouts/partials/deviseNotice" %>
 <%= yield %>
