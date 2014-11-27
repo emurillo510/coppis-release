@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @brand.name %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @brand.location %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @brand.description %>
-</p>
-
-<p>
-  <strong>Img:</strong>
-  <%= @brand.img %>
-</p>
+<!-- profile container -->
+<div class="profile-container">
+  <div class="profile-avatar"><%= @brand.img %></div>
+  <table class="profile-info">
+    <tr>
+      <td class="profile-name"><%= @brand.name %></td>
+    </tr>
+    <tr>
+      <td><%= @brand.location %></td>
+    </tr>
+    <tr>
+      <td><%= @brand.website %></td>
+    </tr>
+    <tr>
+      <td class="profile-description"><%= @brand.description %></td>
+    </tr>
+  </table>
+</div>
+<!-- end of profile container -->
 
 <%= link_to 'Edit', edit_brand_path(@brand) %> |
 <%= link_to 'Back', brands_path %>
