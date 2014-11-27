@@ -29,6 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
+    @user.update_attribute(:image, params[:user][:image])
     respond_with(@post)
   end
 
@@ -43,6 +44,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count)
+      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image)
     end
 end

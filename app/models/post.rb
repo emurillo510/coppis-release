@@ -4,31 +4,8 @@ class Post < ActiveRecord::Base
 	has_one :product
 	has_many :comments
 
-	def index
+	# Paperclip for easy upload management for ActiveRecord
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-	end
-
-	def new 
-
-	end
-
-	def create
-
-	end
-
-	def show
-
-    end 
-
-	def edit
-
-	end
-
-	def update
-		
-	end
-
-	def destroy
-
-	end
 end

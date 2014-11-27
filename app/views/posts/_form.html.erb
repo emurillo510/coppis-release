@@ -5,7 +5,7 @@
 </div>
 
 <div class = "post-new-wrapper">
-<%= form_for @post , html: {role: "form"} do |f| %>
+<%= form_for @post , html: {role: "form" , :multipart => true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -23,9 +23,9 @@
   <div class="field">
     <%= f.text_field :brand_name, placeholder: " Brand Name " %>
   </div>
-  <div class="form-group">
-    <label for="exampleInputFile">Upload Photo</label>
-    <input type="file" id="exampleInputFile">
+  <div class="field">
+  <%= f.label :image , "Upload Photo" %>
+  <%= f.file_field :image%>
   </div>
   <div class="field">
     <%= f.label :user_name %><br>
