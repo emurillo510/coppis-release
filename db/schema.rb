@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20141127212055) do
   create_table "brands", force: true do |t|
     t.string   "name"
     t.string   "location"
+    t.string   "website"
     t.text     "description"
     t.string   "img"
     t.datetime "created_at"
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141127212055) do
     t.integer  "post_id"
     t.text     "comment"
     t.integer  "vote_count"
+    t.integer  "comment_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
