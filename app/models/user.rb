@@ -3,11 +3,15 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable #:validatable
+
+  ##############
+  #Associations#
+  ###############
+  has_one :post
   
   ###############
   ##validations##
   ###############
-  #validates_presence_of :username
   validates_uniqueness_of :username
 
   def self.from_omniauth(auth)
