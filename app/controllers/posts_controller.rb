@@ -23,6 +23,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @user = current_user
+
+    @post = @user.posts.build(post_params)
+
+
+    
     @post.save
     respond_with(@post)
   end
