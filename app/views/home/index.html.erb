@@ -13,13 +13,13 @@
     <!-- url this will be the image -->
     <div class="url">
       <!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
-      <span class="post-tagline description"><%=post.title%></span>
+      <span class="post-tagline description"><%= link_to post.title, post %></span>
       <span class="post-brandname brand-name"><%=post.brand_name%></span>
     </div>
 
     <!- user post -->
     <div class="post-user">
-      <span>submitted by </span><span class="post-username user-name"><%=post.user_name%></span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
+      <span>submitted by </span><span class="post-username user-name">User_Name</span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
     </div>
 
     <!-- comment count -->
