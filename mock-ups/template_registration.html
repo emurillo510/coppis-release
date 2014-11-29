@@ -1,81 +1,86 @@
-
-<!-- this here is a template for front-page of site. -->
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 
-	<title>Coppis Post Page</title>
+	<title>Registration Page</title>
 
 	<!-- reference style classes and ids here -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<style>
-		#some-id {display:none;}
-		
-		body {
-			font-family: 'Open Sans', sans-serif;
-		}
-		.container-fluid {
-		max-width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-		}
+	#some-id {display:none;}
 
-		.post-new-wrapper{
-			max-width: 600px;
-			margin-left: auto;
-			margin-right: auto;
-			padding-top: 40px;
+	body {
+	font-family: 'Open Sans', sans-serif;
+	}
 
-		}
+	.container-fluid {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	}
 
-		.post-new-content{
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #e74c3c;
-		padding: 40px;
-		border-radius: 10px;
-		margin-top: 0px;
-
-		}
-
-		.post-new-content h1, h3{
-		color:white;
-		font-size: 28px;
-		margin-top: 10px;
-		}
-
-		.form-control{
-		height: 33px;
-		font-size: 14px;
-		}
-
-		.btn-success{
-		height: 50px;
-		font-size: 18px;
-		margin-left: 500px;
-		float: right;
-	
-		}
-
-		.help-block{
-		float:right;
-		font-style: italic;
-		font-size: 14px;
-		}
-
-		.help-block span{
-			text-decoration: underline ;
-			color: blue;
-		}
+.registration-content{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 0px;
 
 
+    }
+
+    .registration-description{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #bdc3c7;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 0px;
+
+    }
+
+  .btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  float:right;
+  }
+ 
+ .col-sm-offset-2 {
+margin-left: 0;
+
+}
+
+
+
+.form-horizontal{
+  margin:0px;
+}
+
+.col-sm-offset-2 col-sm-10{
+  background-color: green;
+}
+
+.btn-success{
+    height: 50px;
+    font-size: 18px;
+    margin-left: 500px;
+    float: right;
+  }
+
+#inputEmail3{
+  margin-bottom: 10px;
+}
 
 	</style>
-</head>
+	</head>
 
-<body>
+	<body>
+
+		<body>
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -114,38 +119,36 @@
 </nav>
 
 <!-- wrapper for submit new post -->
-<div class = "post-new-content">
-<h1> Find a design you want others to see?</h1>
-<h3> Post it here! </h3>
+
+<div class = "registration-content">
+<div class = "registration-description">
+<h1> Welcome to Coppis!</h1>
+<h4> Thank you for signing up</h4>
 </div>
 
-<div class = "post-new-wrapper">
-<form role="form">
-	<div class="form-group">
-		<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Design Name">
-	</div>
-	<div class="form-group">
-		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Brand Name">
-	</div>
-	<div class="form-group">
-		<label for="exampleInputFile">Upload Photo</label>
-		<input type="file" id="exampleInputFile">
-	</div>
+<hr>
+
+<h4>Please provide your email to complete registration </h4>
+
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      <button type="button" class="btn btn-success"> Continue </button>
+    </div>
+  </div>
+ 
+
+  </div>
+
+
+
 </form>
-	
-		
-			<button type="button" class="btn btn-success"> Submit </button>
 
-			<div>
-			<p class="help-block">Check out our <span>guidlines</span> for posting</p> 
-			</div>	
-	
-	
-	
 
 
 </div>
+	</body>
 
-
-
-</body>
+</html>
