@@ -8,7 +8,7 @@ class CreatePosts < ActiveRecord::Migration
 
       t.text :description
       t.text :comment
-      t.integer :vote_count
+      t.integer :vote_count , default: 0
       t.integer :comment_count
       t.references :user
       t.references :brand

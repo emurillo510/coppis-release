@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<!--<p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
@@ -16,4 +16,44 @@
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path %> -->
+
+<div class="post-container">
+  <div class="post-photo"><%= image_tag @post.image.url(:medium) %></div>
+  <!-- start of post -->
+		<!-- upvote div -->
+		<div class="upvote">
+  			<a href="#" class="upvote-link"><span class="glyphicon glyphicon-chevron-up voted" aria-hidden="true"></a><br>
+  			<span class="vote-count"><%= @post.vote_count %></span>
+		</div>
+
+	<!-- url this will be the image -->
+	<div class="url">
+ 		<!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
+		<span class="post-tagline description"><%= @post.title %></span>
+		<span class="post-brandname brand-name"><%= @post.brand_name %></span>
+	</div>
+
+	<div class="post-user">
+		<span>submitted by </span><span class="post-username user-name">jordandrew</span><span> </span><span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
+	</div>
+
+	<div class="section post-links">
+		<div class="section-title">Related Links</div>
+		<div class="link-title">A Closer Look at the Supreme x Nike 2014 Fall/Winter Air Force 1 "Red" (hypebeast.com)</div>
+	</div>
+
+	<div class="section post-comments">
+		<div class="section-title">90 Comments</div>
+		
+		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/40.jpg" height="40" width="40"></span><span class="comment-user">jordandrew</span><span class="timestamp"> 3 hours ago</span>
+		<div class="comment">Tousled retro Banksy fanny pack banjo vegan. You probably haven't heard of them Brooklyn readymade heirloom, banh mi Williamsburg plaid taxidermy semiotics wayfarers. Master cleanse 90's Banksy, street art small batch whatever brunch cronut cliche 8-bit VHS.</div>
+
+		<form role="form"
+			<div class="form-group">
+			  <textarea class="form-control" rows="1" id="comment" placeholder="Join the conversation"></textarea>
+			  <br>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</form>
+	</div>

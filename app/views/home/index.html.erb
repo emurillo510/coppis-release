@@ -1,2 +1,13 @@
-<%= debug @posts %>
 <%= render "shared/partials/posts" %>
+<!-- cache front page -->
+<% cache do %>
+<!-- post wrapper -->
+<ul class="posts-group">
+<!-- start of post -->
+  <% @posts.each do |post| %>
+  
+  <%= render partial: "shared/partials/post",  locals: { post: post } %>
+
+  <% end %>
+</ul>
+<% end %>

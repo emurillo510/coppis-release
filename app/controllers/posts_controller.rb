@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
   before_filter :authenticate_user!
 
   respond_to :html
@@ -23,12 +23,17 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @user = current_user
 
-    @post = @user.posts.build(post_params)
+    # Find brand and assign one if doesn't exist
+    @brand = Brand.find_by(name: post_params[:brand_name])
+    if @brand.nil?
+      @brand = Brand.create(name: post_params[:brand_name])
+    end
 
+    # Assign brand and user
+    @post.brand = @brand
+    @post.user = current_user #Second association is set here
 
-    
     @post.save
     respond_with(@post)
   end
@@ -44,12 +49,20 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
+
+  def vote
+     value = params[:type] == "up" ? 1 : -1
+     @post.add_or_update_evaluation(:votes, value, current_user)
+     redirect_to :back, notice: "Thank you for voting"
+  end
+
+
   private
     def set_post
       @post = Post.find(params[:id])
     end
 
     def post_params
-      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image)
+      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type)
     end
 end

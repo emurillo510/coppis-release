@@ -6,7 +6,6 @@ class CreateBrands < ActiveRecord::Migration
       t.string :website
       t.text :description
       t.string :img
-
       t.timestamps
     end
   end
