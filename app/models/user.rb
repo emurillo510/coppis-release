@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
   ###############
   validates_uniqueness_of :username
 
+  #Active Record Reputation System
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
+  has_reputation :votes, source: {reputation: :votes, of: :postss}, aggregated_by: :sum
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid).permit!).first_or_initialize.tap do |user|
       user.provider = auth.provider
@@ -43,5 +47,10 @@ class User < ActiveRecord::Base
   	else
   		super
   	end
+  end
+
+  #Active Record Reputation System
+  def voted_for?(post)
+  evaluations.where(target_type: post.class, target_id: post.id).present?
   end
 end

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
   
-   @posts = getAllPost.order('created_at DESC')
+   @posts = Post.find_with_reputation(:votes, :all)
    
   end
 
@@ -10,4 +10,11 @@ class HomeController < ApplicationController
   def getAllPost
      Post.all
   end 
+
+  #Active Record Reputation System
+  def vote
+     value = params[:type] == "up" ? 1 : -1
+     @post.add_or_update_evaluation(:votes, value, current_user)
+     redirect_to :back, notice: "Thank you for voting"
+  end
 end

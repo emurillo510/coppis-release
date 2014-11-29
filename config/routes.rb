@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :products
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-  resources :posts
+  resources :posts do 
+      member { post :vote } #Active Record Reputation System
+  end
+
 
   #root
   root to: "home#index"

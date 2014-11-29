@@ -2,8 +2,9 @@
   
   <!-- upvote div -->
   <div class="upvote">
-      <a href="#" class="upvote-link" ><span class="glyphicon glyphicon-chevron-up voted" aria-hidden="true"></a><br>
-      <span class="vote-count"><%= post.vote_count %></span>
+
+     <%= link_to "" , vote_post_path(post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up voted" , 'aria-hidden' => true%><br>
+      <span class="vote-count"><%= post.votes.to_i %></span>
   </div>
 
   <!-- url this will be the image -->

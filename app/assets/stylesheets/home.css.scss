@@ -13,7 +13,7 @@ ul { list-style-type: none; }
 	  }
 
 .upvote {
-	background-color: #ecf0f1;
+	background-color: #ecf0f1 !important; 
 	width: 50px;
 	height: 60px;
 	text-align: center;
@@ -54,3 +54,25 @@ ul { list-style-type: none; }
 	font-weight: 700;
 	line-height: 2em;
 }	
+
+/* styling links */
+a{
+    text-decoration: none;
+
+}
+a:link {
+    text-decoration: none; 
+}
+
+a.upvote-link:visited  {
+    text-decoration: none;
+    color: #d35400 !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}

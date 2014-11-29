@@ -59,6 +59,9 @@ gem 'omniauth-instagram', '~> 1.0.1'
 # Use paperclip for Easy upload management for ActiveRecord
 gem 'paperclip', '~> 4.2.0'
 
+# ActiveRecord Reputation System gem allows rails apps to compute and publish reputation scores for active record models.
+gem 'activerecord-reputation-system', require: 'reputation_system'
+
 
 # Development Environment Set-Up
 group :development, :test do

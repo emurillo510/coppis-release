@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
   before_filter :authenticate_user!
 
   respond_to :html
@@ -48,12 +48,19 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
+  def vote
+     value = params[:type] == "up" ? 1 : -1
+     @post.add_or_update_evaluation(:votes, value, current_user)
+     redirect_to :back, notice: "Thank you for voting"
+  end
+
+
   private
     def set_post
       @post = Post.find(params[:id])
     end
 
     def post_params
-      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image)
+      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type)
     end
 end
