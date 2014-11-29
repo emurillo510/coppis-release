@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20141127212055) do
 
   create_table "brands", force: true do |t|
+    t.integer  "post_id"
     t.string   "name"
     t.string   "location"
     t.string   "website"
@@ -22,6 +23,8 @@ ActiveRecord::Schema.define(version: 20141127212055) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "brands", ["post_id"], name: "index_brands_on_post_id"
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20141127212055) do
     t.string   "user_name"
     t.text     "description"
     t.text     "comment"
-    t.integer  "vote_count"
+    t.integer  "vote_count",         default: 0
     t.integer  "comment_count"
     t.integer  "user_id"
     t.integer  "brand_id"
