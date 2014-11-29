@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit({ roles: [] }, :email, :username, :password, :password_confirmation) }
   end
+
+
+  private
+
+  # Overwriting the sign_out redirect path method
+  def after_sign_up_path_for(resource)
+    edit_user_registration_path
+  end
 end
