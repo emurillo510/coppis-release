@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid).permit!).first_or_initialize.tap do |user|
+      user.username = auth.info.nickname
       user.provider = auth.provider
       user.uid = auth.uid
       user.oauth_token = auth.credentials.token
