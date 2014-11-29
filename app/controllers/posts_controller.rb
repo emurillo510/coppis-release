@@ -24,7 +24,15 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    
+    #build brand information from post
+    @brand = Brand.find_by(name: post_params[:brand_name])
+    if @brand.nil?
+      @brand = Brand.create(name: post_params[:brand_name])
+      @post = @brand.posts.build(post_params)
+    else
+      @post = @brand.posts.build(post_params)
+    end
+
     @post.save
     respond_with(@post)
   end

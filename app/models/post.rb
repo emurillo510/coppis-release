@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
    ####################
    #set default values#
    ####################
+   after_initialize :init
 
    #Paperclip for easy upload management for ActiveRecord
    has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
@@ -16,7 +17,8 @@ class Post < ActiveRecord::Base
 
 
    def init
-      self.vote_count  ||= 0           #will set the default value only if it's nil
+      self.vote_count  ||= 0 #will set the default value only if it's nil
+      self.comment_count ||= 0 
    end
 
 end
