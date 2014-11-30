@@ -16,7 +16,7 @@
 
   <!-- user post -->
   <div class="post-user">
-    <span>submitted by </span><span class="post-username user-name"><%=post.user_name%></span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
+    <span>submitted by </span><span class="post-username user-name"><%=post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
   </div>
 
   <!-- comment count -->

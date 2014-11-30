@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   resources :products
 
+
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :posts do 
-      member { post :vote } #Active Record Reputation System
+    resources :comments
+    member { post :vote } #Active Record Reputation System  
   end
 
 

@@ -35,7 +35,7 @@
 	</div>
 
 	<div class="post-user">
-		<span>submitted by </span><span class="post-username user-name">jordandrew</span><span> </span><span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
+		<span>submitted by </span><span class="post-username user-name"><%=@post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
 	</div>
 
 	<div class="section post-links">
@@ -44,16 +44,8 @@
 	</div>
 
 	<div class="section post-comments">
-		<div class="section-title">90 Comments</div>
+		<div class="section-title"><%=@post.comment_count%> comments</div>
 		
-		<span class="user-photo"><img src="http://api.randomuser.me/portraits/men/40.jpg" height="40" width="40"></span><span class="comment-user">jordandrew</span><span class="timestamp"> 3 hours ago</span>
-		<div class="comment">Tousled retro Banksy fanny pack banjo vegan. You probably haven't heard of them Brooklyn readymade heirloom, banh mi Williamsburg plaid taxidermy semiotics wayfarers. Master cleanse 90's Banksy, street art small batch whatever brunch cronut cliche 8-bit VHS.</div>
-
-		<form role="form"
-			<div class="form-group">
-			  <textarea class="form-control" rows="1" id="comment" placeholder="Join the conversation"></textarea>
-			  <br>
-			  <button type="submit" class="btn btn-default">Submit</button>
-			</div>
-		</form>
+		<%= render :partial => @post.comments %>
+		<%= render 'comments/form' %>
 	</div>

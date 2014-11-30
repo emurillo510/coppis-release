@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   #Associations#
   ###############
   has_many :posts
+  has_many :comments, dependent: :destroy
   
   ###############
   ##validations##

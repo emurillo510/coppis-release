@@ -2,12 +2,10 @@
 
 one:
   user_id: 
+  content: MyString
   post_id: 
-  comment: MyText
-  vote_count: 1
 
 two:
   user_id: 
+  content: MyString
   post_id: 
-  comment: MyText
-  vote_count: 1

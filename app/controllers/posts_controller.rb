@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
+
   before_filter :authenticate_user!
 
   respond_to :html
@@ -56,6 +57,8 @@ class PostsController < ApplicationController
      redirect_to :back, notice: "Thank you for voting"
   end
 
+  
+
 
   private
     def set_post
@@ -64,5 +67,9 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type)
+    end
+
+    def comment_params
+      params.require(:comment).permit(:user_id, :post_id, :content)
     end
 end
