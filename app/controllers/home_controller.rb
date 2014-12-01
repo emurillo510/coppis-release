@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => false)  
+    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true)  
 
     respond_to do |format|
       format.html
@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def recent
-     @posts = Post.find_with_reputation(:votes, :all).where(:is_public => false)    
+     @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true)    
 
     respond_to do |format|
       format.html
