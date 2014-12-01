@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<!-- cache front page -->
+<% cache do %>
+<!-- post wrapper -->
+<ul class="posts-group">
+<!-- start of post -->
+  <% @posts.each do |post| %>
+  
+  <%= render partial: "shared/partials/post",  locals: { post: post } %>
+
+  <% end %>
+</ul>
+<% end %>

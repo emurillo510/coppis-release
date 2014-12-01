@@ -1,13 +1,20 @@
 class HomeController < ApplicationController
   def index
-    
-  @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true)    
-  #Profile.all.order(:name).where(:is_brand => true).paginate(:page => params[:page], :per_page =>8)
+    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => false)  
 
     respond_to do |format|
       format.html
     end 
   end
+
+  def recent
+     @posts = Post.find_with_reputation(:votes, :all).where(:is_public => false)    
+
+    respond_to do |format|
+      format.html
+    end 
+  end
+
 
   private
 
