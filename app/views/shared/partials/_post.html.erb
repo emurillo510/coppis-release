@@ -20,9 +20,5 @@
   </div>
 
   <!-- comment count -->
-  <a href="/posts/naminum" class="view-discussion">
-    <p class="comment-count"><%=post.comment_count%> comments</p>
-  </a>
-
-  </br>
+  <span class="view-discussion"><p class="comment-count"><%=link_to post.comment_count, post_path(post) %><%=link_to ' comments', post_path(post) %></p></span>
 </li> <!-- end of post -->
