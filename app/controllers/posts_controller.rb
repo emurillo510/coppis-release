@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     @post.user = current_user #Second association is set here
 
     @post.save
-    respond_with(@post)
+    redirect_to root_path, notice: "Thank you for your submission. It is under review. We will notify you if it is approved."
   end
 
   def update
