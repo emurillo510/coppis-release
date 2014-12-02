@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    
     @post = Post.new(post_params)
 
     # Find brand and assign one if doesn't exist
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
-    @user.update_attribute(:image, params[:user][:image])
+    #@user.update_attribute(:image, params[:user][:image])
     respond_with(@post)
   end
 
@@ -57,8 +58,9 @@ class PostsController < ApplicationController
      redirect_to :back, notice: "Thank you for voting"
   end
 
-  
-
+  def admin_page
+    @posts = Post.all
+  end
 
   private
     def set_post
@@ -66,7 +68,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type)
+      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type, :is_public)
     end
 
     def comment_params
