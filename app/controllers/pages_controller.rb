@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+	
    def queue	
       @posts = Post.find_with_reputation(:votes, :all).where(:is_public => false)    
 
@@ -9,10 +9,6 @@ class PagesController < ApplicationController
    end
 
    private
-   
-   def getAllPost
-      Post.all
-   end 
 
    #Active Record Reputation System
    def vote

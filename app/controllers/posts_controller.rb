@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    
     @post = Post.new(post_params)
 
     # Find brand and assign one if doesn't exist
@@ -51,7 +50,7 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
-
+#### custom utility methods ####
   def vote
      value = params[:type] == "up" ? 1 : -1
      @post.add_or_update_evaluation(:votes, value, current_user)
