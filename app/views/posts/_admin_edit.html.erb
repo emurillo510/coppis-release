@@ -1,0 +1,58 @@
+<div class = "post-edit">
+<%= form_for @post , html: {role: "form" , :multipart => true } do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+Add a comment to this line
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>Editing post id: <%= params[:id] %></h1>
+  <div class="field">
+    <%= f.text_field :title , placeholder: " Design Name " %>
+  </div>
+  <div class="field">
+    <%= f.text_field :brand_name, placeholder: " Brand Name " %>
+  </div>
+  <div class="field">
+  <%= f.label :image , "Upload Photo" %>
+  <%= f.file_field :image%>
+  </div>
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name , placeholder: " This won't be here "%>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description , placeholder: " This won't be here "   %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment , placeholder: " This won't be here " %>
+  </div>
+  <div class="field">
+    <%= f.label :vote_count %><br>
+    <%= f.number_field :vote_count , placeholder: " This won't be here " %>
+  </div>
+  <div class="field">
+    <%= f.label :comment_count  %><br>
+    <%= f.number_field :comment_count , placeholder: " This won't be here "%>
+  </div>
+  <div class="field">
+    <h1>is_public</h1>
+  	<%= f.label :is_public, "Yes", :value => true %>
+    <%= f.radio_button :is_public, true %>
+    <%= f.label :is_public, "No", :value => false %>
+    <%= f.radio_button :is_public, false %>
+  </div>
+  <div class="field">
+    <%= f.submit 'Submit' %>
+  </div>
+ 
+<% end %>
+</div>

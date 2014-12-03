@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true)  
+    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true).order("votes DESC")
 
     respond_to do |format|
       format.html
@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def recent
-     @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true)    
+     @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true).order("created_at DESC")
 
     respond_to do |format|
       format.html
@@ -25,6 +25,7 @@ class HomeController < ApplicationController
   #Active Record Reputation System
   def vote
      value = params[:type] == "up" ? 1 : -1
+     @post = Post.find(params[:id])
      @post.add_or_update_evaluation(:votes, value, current_user)
      redirect_to :back, notice: "Thank you for voting"
   end
