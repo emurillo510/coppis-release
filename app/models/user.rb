@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 
   #Active Record Reputation System
   has_many :evaluations, class_name: "RSEvaluation", as: :source
-  has_reputation :votes, source: {reputation: :votes, of: :postss}, aggregated_by: :sum
+  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid).permit!).first_or_initialize.tap do |user|

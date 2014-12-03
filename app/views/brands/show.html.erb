@@ -18,4 +18,13 @@
     </tr>
   </table>
 </div>
+
+<ul class="posts-group">
+<!-- start of post -->
+  <% @posts.each do |post| %>
+  
+  <%= render partial: "shared/partials/post",  locals: { post: post } %>
+
+  <% end %>
+</ul>
 <!-- end of profile container -->
