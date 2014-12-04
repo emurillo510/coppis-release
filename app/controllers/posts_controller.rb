@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = Post.all
+   @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true).order("votes DESC")
     respond_with(@posts)
   end
 
