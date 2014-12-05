@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true).order("votes DESC")
+    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true).order("votes DESC").paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html
