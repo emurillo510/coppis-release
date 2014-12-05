@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="section post-comments">
-		<div class="section-title"><%=@post.comment_count%> comments</div>
+		<div class="section-title"><%=@post.comments.length%> comments</div>
 		
 		<%= render :partial => @post.comments %>
 		<%= render 'comments/form' %>

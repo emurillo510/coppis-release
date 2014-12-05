@@ -62,6 +62,9 @@ gem 'paperclip', '~> 4.2.0'
 # ActiveRecord Reputation System gem allows rails apps to compute and publish reputation scores for active record models.
 gem 'activerecord-reputation-system', require: 'reputation_system'
 
+# Will Paginate
+gem 'will_paginate', '~> 3.0.7'
+
 
 # Development Environment Set-Up
 group :development, :test do

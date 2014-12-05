@@ -35,6 +35,8 @@ class PostsController < ApplicationController
     @post.brand = @brand
     @post.user = current_user #Second association is set here
 
+    # Assign comment to post.
+
     @post.save
     redirect_to root_path, notice: "Thank you for your submission. It is under review. We will notify you if it is approved."
   end

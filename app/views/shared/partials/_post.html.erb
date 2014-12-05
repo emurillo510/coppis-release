@@ -20,5 +20,5 @@
   </div>
 
   <!-- comment count -->
-  <span class="view-discussion"><p class="comment-count"><%=link_to post.comment_count, post_path(post) %><%=link_to ' comments', post_path(post) %></p></span>
+  <span class="view-discussion"><p class="comment-count"><%=link_to post.comments.length, post_path(post) %><%=link_to ' comments', post_path(post) %></p></span>
 </li> <!-- end of post -->
