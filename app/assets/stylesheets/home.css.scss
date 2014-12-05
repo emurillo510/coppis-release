@@ -4,11 +4,13 @@
 
 /* post styling */
 
+ul { list-style-type: none; }
+
 .post {
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-	  }
+}
 
 .upvote {
 	background-color: #ecf0f1 !important; 
@@ -35,9 +37,9 @@
 	font-size: 1.5em;
 	margin-right: 4px;
 }
-.brand-name {
+.brand-name a {
 	color: #7f8c8d;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .post-user {

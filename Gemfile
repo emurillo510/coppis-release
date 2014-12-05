@@ -64,6 +64,7 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 
 # Will Paginate
 gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap'
 
 
 # Development Environment Set-Up

@@ -11,7 +11,7 @@
   <div class="url">
     <!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
     <span class="post-tagline description"><%= link_to post.title, post_path(post) %></span>
-    <span class="post-brandname brand-name"><%=link_to post.brand_name, post.brand %></span>
+    <span class="post-brandname brand-name">(<%=link_to post.brand_name, post.brand %>)</span>
   </div>
 
   <!-- user post -->
@@ -20,5 +20,5 @@
   </div>
 
   <!-- comment count -->
-  <span class="view-discussion"><p class="comment-count"><%=link_to post.comments.length, post_path(post) %><%=link_to ' comments', post_path(post) %></p></span>
+  <span class="view-discussion"><p class="comment-count"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></p></span>
 </li> <!-- end of post -->

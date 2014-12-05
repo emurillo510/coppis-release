@@ -11,4 +11,4 @@
   <% end %>
 </ul>
 <% end %>
-<%= will_paginate @posts %>
+<nav><ul id="paginate"><%= will_paginate @posts, renderer: BootstrapPagination::Rails %></ul></nav>

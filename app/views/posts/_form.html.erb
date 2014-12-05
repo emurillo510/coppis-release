@@ -1,10 +1,10 @@
 <!-- wrapper for submit new post -->
-<div class = "post-new-content">
+<div class = "registration-banner">
 <h1> Find a design you want others to see?</h1>
-<h3> Post it here! </h3>
+<h4> Post it here! </h4>
 </div>
 
-<div class = "post-new-wrapper">
+<div class = "form-horizontal">
 <%= form_for @post , html: {role: "form" , :multipart => true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -27,26 +27,7 @@
   <%= f.label :image , "Upload Photo" %>
   <%= f.file_field :image%>
   </div>
-  <!--<div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name , placeholder: " This won't be here "%>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description , placeholder: " This won't be here "   %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment , placeholder: " This won't be here " %>
-  </div>
-  <div class="field">
-    <%= f.label :vote_count %><br>
-    <%= f.number_field :vote_count , placeholder: " This won't be here " %>
-  </div>
-  <div class="field">
-    <%= f.label :comment_count  %><br>
-    <%= f.number_field :comment_count , placeholder: " This won't be here "%>
-  </div> -->
+  
   <div class="actions">
     <%= f.submit 'Submit' , :class => 'btn btn-success' %>
   </div>
