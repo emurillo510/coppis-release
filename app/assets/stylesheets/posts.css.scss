@@ -140,6 +140,7 @@
 			max-width: 600px;
 			margin-left: auto;
 			margin-right: auto;
+			display: block;
 		}
 		.user-photo img {
 			border-radius: 2px;
@@ -168,4 +169,7 @@
 		}
 		.comments {
 			padding-left: 0px;
+		}
+		.comment-field {
+			margin-bottom: 20px;
 		}
