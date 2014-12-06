@@ -1,10 +1,10 @@
 <!-- wrapper for submit new post -->
 <div class = "registration-banner">
-<h1> Find a design you want others to see?</h1>
+<h3> Find a design you want others to see?</h1>
 <h4> Post it here! </h4>
 </div>
 
-<div class = "form-horizontal">
+<div class = "post-new-wrapper">
 <%= form_for @post , html: {role: "form" , :multipart => true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -17,21 +17,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_field :title , placeholder: " Design Name " %>
+  <div class="form-group">
+    <%= f.text_field :title , placeholder: " Design Name ", class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.text_field :brand_name, placeholder: " Brand Name " %>
+  <div class="form-group">
+    <%= f.text_field :brand_name, placeholder: " Brand Name ", class: "form-control" %>
   </div>
-  <div class="field">
-  <%= f.label :image , "Upload Photo" %>
-  <%= f.file_field :image%>
+  <div>
+    <%= f.label :image , "Upload Photo" %>
+    <%= f.file_field :image%>
   </div>
   
-  <div class="actions">
+  <div class="form-group" id="form-button">
     <%= f.submit 'Submit' , :class => 'btn btn-success' %>
   </div>
-  <p class="help-block">Check out our <span>guidlines</span> for posting</p> 
+  <p class="help-block">Check out our <span>guidelines</span> for posting</p> 
 
 <% end %>
 </div>
