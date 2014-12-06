@@ -31,7 +31,7 @@
   <div class="form-group" id="form-button">
     <%= f.submit 'Submit' , :class => 'btn btn-success' %>
   </div>
-  <p class="help-block">Check out our <span>guidelines</span> for posting</p> 
+  <p class="help-block">Check out our <%= link_to 'Guidelines', guidelines_path, class: "blue-link" %> for posting</p> 
 
 <% end %>
 </div>
