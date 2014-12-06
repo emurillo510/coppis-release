@@ -18,3 +18,5 @@ class PagesController < ApplicationController
    end
 end
 
+   def guidelines
+   end

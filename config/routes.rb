@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "queue" => "pages#queue"
   get "recent" => "home#recent"
   get "admin_page" => "posts#admin_page"
+  get "guidelines" => "pages#guidelines"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
