@@ -19,11 +19,6 @@
 		<span>submitted by </span><span class="post-username user-name"><%=@post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
 	</div>
 
-	<div class="section post-links">
-		<div class="section-title">Related Links</div>
-		<div class="link-title">A Closer Look at the Supreme x Nike 2014 Fall/Winter Air Force 1 "Red" (hypebeast.com)</div>
-	</div>
-
 	<div class="section post-comments">
 		<div class="section-title"><%=@post.comments.length%> comments</div>
 		
