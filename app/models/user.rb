@@ -20,12 +20,11 @@ class User < ActiveRecord::Base
   has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid).permit!).first_or_initialize.tap do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.username = auth.info.nickname
       user.provider = auth.provider
       user.uid = auth.uid
       user.oauth_token = auth.credentials.token
-      user.save!
     end
   end
 
