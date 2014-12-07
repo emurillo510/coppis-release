@@ -75,11 +75,16 @@ body {
 }
 .glyphicon-chevron-up {
 	font-size: 1.5em;
-	color: red;
+	color: #95a5a6;
 	
 }
-.voted {
-	color: red;
+a.upvote-link:visited  {
+    text-decoration: none;
+    color: red !important;
+}
+a.upvote-link:hover {
+    text-decoration: none;
+    color: red;
 }
 
 .blue-link {
