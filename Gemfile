@@ -67,6 +67,9 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap'
 
+# Aws
+gem 'aws-sdk', '~> 1.59.1'
+
 
 # Development Environment Set-Up
 group :development, :test do
