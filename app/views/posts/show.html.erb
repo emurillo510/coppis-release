@@ -4,9 +4,10 @@
   <!-- start of post -->
 		<!-- upvote div -->
 		<div class="upvote">
-  			<a href="#" class="upvote-link"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></a><br>
-  			<span class="vote-count"><%= @post.reputation_for(:votes).to_i%></span>
-		</div>
+
+     <%= link_to "" , vote_post_path(@post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up" , 'aria-hidden' => true%><br>
+      <span class="vote-count"><%= @post.votes.to_i %></span>
+  </div>
 
 	<!-- url this will be the image -->
 	<div class="url">
