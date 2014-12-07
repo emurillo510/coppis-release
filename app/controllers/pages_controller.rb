@@ -20,3 +20,10 @@ end
 
    def guidelines
    end
+
+   def privacypolicy
+   end
+
+   def tos
+   end
+   
