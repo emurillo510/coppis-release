@@ -28,14 +28,6 @@ Add a comment to this line
     <%= f.text_field :user_name , placeholder: " This won't be here "%>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description , placeholder: " This won't be here "   %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment , placeholder: " This won't be here " %>
-  </div>
-  <div class="field">
     <%= f.label :vote_count %><br>
     <%= f.number_field :vote_count , placeholder: " This won't be here " %>
   </div>
@@ -44,7 +36,7 @@ Add a comment to this line
     <%= f.number_field :comment_count , placeholder: " This won't be here "%>
   </div>
   <div class="field">
-    <h1>is_public</h1>
+    <h3>is_public</h3>
   	<%= f.label :is_public, "Yes", :value => true %>
     <%= f.radio_button :is_public, true %>
     <%= f.label :is_public, "No", :value => false %>
@@ -53,6 +45,9 @@ Add a comment to this line
   <div class="field">
     <%= f.submit 'Submit' %>
   </div>
+
+  <%= link_to 'Show', @post %> |
+  <%= link_to 'Back', admin_page_path %>
  
 <% end %>
 </div>
