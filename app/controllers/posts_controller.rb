@@ -65,12 +65,11 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.where(id: params[:id]).order(:comment).first
-
+      @post = Post.find_with_reputation(:votes, :all).where(:id => params[:id]).first
     end
 
     def post_params
-      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type, :is_public)
+      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type, :is_public, :votes)
     end
 
     def comment_params

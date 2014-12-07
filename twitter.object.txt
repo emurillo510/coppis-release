@@ -1,0 +1,65 @@
+AUTH INFORMATION > 
+
+provider="twitter" 
+uid="105402806#<OmniAuth::AuthHash 
+credentials=#<OmniAuth::AuthHash 
+secret="60aO1hSWxaDN3BukWYWxlFTJKxJUIfXijzGLleLOiNrFW" 
+token="1054028064-JiUc2j3LhMuZ6UD0vIinixBapSWVxOqIzdsIi3P"> 
+extra=#<OmniAuth::AuthHash 
+access_token=#<OAuth::AccessToken:0x007fc0b4faa3d0 
+@token="1054028064-JiUc2j3LhMuZ6UD0vIinixBapSWVxOqIzdsIi3P", 
+@secret="60aO1hSWxaDN3BukWYWxlFTJKxJUIfXijzGLleLOiNrFW", 
+@consumer=#<OAuth::Consumer:0x007fc0b4fd3618 
+@key="29ZcHusgTHYf8tSUvdj70KVn0", 
+@secret="dCKk0FJHq8HKXxSwIdDPadFAwRmbuEd489gUWlEFvUiIOCel4K", 
+@options={:signature_method=>"HMAC-SHA1", :request_token_path=>"/oauth/request_token", :authorize_path=>"/oauth/authenticate", :access_token_path=>"/oauth/access_token", :proxy=>nil, :scheme=>:header, :http_method=>:post, :oauth_version=>"1.0", :site=>"https://api.twitter.com"}, 
+@http=#<Net::HTTP api.twitter.com:443 open=false>, 
+@http_method=:post, 
+@uri=#<URI::HTTPS:0x007fc0b4fa92c8 URL:https://api.twitter.com>>, 
+@params={:oauth_token=>"1054028064-JiUc2j3LhMuZ6UD0vIinixBapSWVxOqIzdsIi3P", 
+"oauth_token"=>"1054028064-JiUc2j3LhMuZ6UD0vIinixBapSWVxOqIzdsIi3P", 
+:oauth_token_secret=>"60aO1hSWxaDN3BukWYWxlFTJKxJUIfXijzGLleLOiNrFW", 
+"oauth_token_secret"=>"60aO1hSWxaDN3BukWYWxlFTJKxJUIfXijzGLleLOiNrFW", 
+:user_id=>"1054028064", "user_id"=>"1054028064", 
+:screen_name=>"Elton_Murillo", "screen_name"=>"Elton_Murillo"}, 
+@response=#<Net::HTTPOK 200 OK readbody=true>> 
+raw_info=#<OmniAuth::AuthHash contributors_enabled=false created_at="Wed Jan 02 02:52:12 +0000 2013" 
+default_profile=true default_profile_image=false description="" 
+
+entities=#<OmniAuth::AuthHash description=#<OmniAuth::AuthHash urls=[]>> 
+favourites_count=6 
+follow_request_sent=false 
+followers_count=20 
+following=false 
+friends_count=171 
+geo_enabled=false id=1054028064 
+id_str="1054028064" 
+is_translation_enabled=false 
+is_translator=false lang="en" 
+listed_count=1 
+location="" 
+name="Elton" 
+notifications=false 
+profile_background_color="C0DEED" 
+profile_background_image_url="http://abs.twimg.com/images/themes/theme1/bg.png" 
+profile_background_image_url_https="https://abs.twimg.com/images/themes/theme1/bg.png" 
+profile_background_tile=false
+profile_image_url="http://pbs.twimg.com/profile_images/3052938406/f84c899d92ae80db0615d80c2bfe9a41_normal.jpeg" 
+profile_image_url_https="https://pbs.twimg.com/profile_images/3052938406/f84c899d92ae80db0615d80c2bfe9a41_normal.jpeg" profile_link_color="0084B4" profile_location=nil 
+profile_sidebar_border_color="C0DEED" 
+profile_sidebar_fill_color="DDEEF6" 
+profile_text_color="333333" 
+profile_use_background_image=true 
+protected=false screen_name="Elton_Murillo" 
+statuses_count=269 
+time_zone="Arizona" 
+url=nil 
+utc_offset=-25200 
+verified=false>> 
+
+info=#<OmniAuth::AuthHash::InfoHash description="" 
+image="http://pbs.twimg.com/profile_images/3052938406/f84c899d92ae80db0615d80c2bfe9a41_normal.jpeg" 
+location="" 
+name="Elton" 
+nickname="Elton_Murillo" 
+urls=#<OmniAuth::AuthHash Twitter="https://twitter.com/Elton_Murillo" Website=nil>4">
