@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   respond_to :html
 
   def index
-    @comments = Comment.all
+    @comments = Comment.all.order("created_at ASC")
     respond_with(@comments)
   end
 
