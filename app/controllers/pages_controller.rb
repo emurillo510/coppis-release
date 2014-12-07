@@ -27,3 +27,5 @@ end
    def tos
    end
    
+   def about
+   end
