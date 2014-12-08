@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20141201071521) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.string   "twitter_avatar"
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"

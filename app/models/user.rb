@@ -21,10 +21,14 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+
+      logger.debug "FINAL #{auth.info.image}"
+
       user.username = auth.info.nickname
       user.provider = auth.provider
       user.uid = auth.uid
       user.oauth_token = auth.credentials.token
+      user.twitter_avatar = auth.info.image
       user.save
     end
   end

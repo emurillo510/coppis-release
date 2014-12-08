@@ -25,6 +25,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
+              <li><%= image_tag(current_user.twitter_avatar)%></li>
               <Logged in as <strong><%= current_user.username %></strong>
               <li><%= link_to 'Notifications' %></li>
               <li><%= link_to 'Settings' , edit_user_registration_path%></li>
