@@ -70,6 +70,9 @@ gem 'will_paginate-bootstrap'
 # Aws
 gem 'aws-sdk', '~> 1.59.1'
 
+# converts all links inside of body of text
+gem 'rinku', '~> 1.7.3'
+
 
 # Development Environment Set-Up
 group :development, :test do

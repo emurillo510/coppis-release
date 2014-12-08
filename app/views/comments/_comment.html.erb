@@ -2,6 +2,6 @@
   <ol class="comments">
   	<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span class="comment-user"><%= comment.user.username %></span><span class="timestamp"> <%= time_ago_in_words(comment.created_at) %> ago</span>
     <br/>
-    <div class="comment"><%= comment.content %></div>
+    <div class="comment"><%= Rinku.auto_link(comment.content).html_safe %></div>
   </ol>
 <% end %>
