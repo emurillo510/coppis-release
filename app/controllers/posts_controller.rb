@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:new, :create, :update, :destory, :vote]
 
   respond_to :html
 
