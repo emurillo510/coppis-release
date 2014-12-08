@@ -14,7 +14,7 @@ class PagesController < ApplicationController
    def vote
       value = params[:type] == "up" ? 1 : -1
       @post.add_or_update_evaluation(:votes, value, current_user)
-      redirect_to :back, notice: "Thank you for voting"
+      redirect_to :back
    end
 end
 
