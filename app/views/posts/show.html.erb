@@ -23,5 +23,9 @@
 		<div class="section-title"><%=@post.comments.length%> comments</div>
 		
 		<%= render :partial => @post.comments %>
-		<%= render 'comments/form' %>
+		<% if !current_user.nil? && (current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m")) %>
+			<%= render 'comments/form' %>
+		<% else %>
+			<div class="alert alert-warning" role="alert">Commenting is limited for now but will open to those receommended by the community.</div>
+		<% end %>
 	</div>
