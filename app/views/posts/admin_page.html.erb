@@ -1,5 +1,5 @@
 <div class = "post-edit">
-<% if current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m") %>
+<% if !current_user.nil? && (current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m")) %>
 <h1>Listing posts</h1>
 
 <table>

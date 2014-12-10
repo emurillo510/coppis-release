@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
     edit_user_registration_path
   end
 
+  def render_404
+     raise ActionController::RoutingError.new('Not Found')
+  end
+
 end

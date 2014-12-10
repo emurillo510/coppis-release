@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 20141208053219) do
     t.string   "username"
     t.string   "provider"
     t.string   "uid"
+    t.string   "entities"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "twitter_avatar"
