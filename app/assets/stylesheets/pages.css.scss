@@ -86,7 +86,25 @@
   padding-right: 40px;
   border-radius: 10px;
   margin-bottom: 20px;
+}
 
+  a{
+    text-decoration: none;
+
+}
+a:link {
+    text-decoration: none; 
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+a:active {
+    text-decoration: underline;
+    color: blue;
 }
 
 .about-wrapper{
@@ -95,4 +113,9 @@
       margin-right: auto;
       margin-bottom: 40px;
     
+}
+
+.contact-container{
+  padding-left: 10px;
+
 }
