@@ -25,6 +25,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+    # Assign query_id here, used for custom url links.
+    @post.query = post_params[:title].downcase.gsub(" ", "-")
+
     # Find brand and assign one if doesn't exist
     @brand = Brand.find_by(name: post_params[:brand_name])
     if @brand.nil?
@@ -35,15 +38,12 @@ class PostsController < ApplicationController
     @post.brand = @brand
     @post.user = current_user #Second association is set here
 
-    # Assign comment to post.
-
     @post.save
     redirect_to root_path, notice: "Thank you for your submission. It is under review. We will notify you if it is approved."
   end
 
   def update
     @post.update(post_params)
-    #@user.update_attribute(:image, params[:user][:image])
     respond_with(@post)
   end
 
@@ -65,11 +65,12 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.find_with_reputation(:votes, :all).where(:id => params[:id]).first
+      #@post = Post.find_with_reputation(:votes, :all).where(:id => params[:query_id]).first keep this here for future reference.
+      @post = Post.find_with_reputation(:votes, :all, { :query => "query" }).first
     end
 
     def post_params
-      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type, :is_public, :votes)
+      params.require(:post).permit(:title, :product_name, :brand_name, :user_name, :description, :comment,:vote_count, :comment_count, :image, :type, :is_public, :votes, :query)
     end
 
     def comment_params
