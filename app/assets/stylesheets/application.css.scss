@@ -14,13 +14,13 @@
  *= require_self
  */
 
-$navbar-default-bg: 									lighten(#000, 30%);
+$navbar-default-bg: 									lighten(#000, 15%);
 $navbar-default-link-color: 					lighten(#000, 80%);
 $navbar-default-link-active-color: 		white;
 $navbar-default-link-hover-color: 		white;
 $navbar-default-brand-color: 					white;
 $jumbotron-bg: 												white;
-$brand-primary:                				lighten(#000, 30%);
+$brand-primary:                				lighten(#000, 15%);
 $grayLight:                           gray;   
 
 @import "bootstrap-sprockets";
