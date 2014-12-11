@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141211070150) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "is_public",          default: false
+    t.string   "slug"
     t.string   "query"
   end
 
