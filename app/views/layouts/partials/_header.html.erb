@@ -15,26 +15,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav btn-group">
-        <li><%= link_to "Popular", root_path %></li>
-        <li><%= link_to "Recent", recent_path %></li>
+        <li class="<%= 'active' if current_page?(root_path)%>"><%= link_to "Popular", root_path %></li>
+        <li class="<%= 'active' if current_page?(recent_path)%>"><%= link_to "Recent", recent_path %></li>
       </ul>
       <!-- submit button / profile dropdown -->
       <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to '+Submit', new_post_path , :data => {":aria-hidden" => "true"} %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
+            <li class="<%= 'active' if current_page?(new_post_path)%>"><%= link_to '+Submit', new_post_path , :data => {":aria-hidden" => "true"} %></li>
+        <% if user_signed_in? %>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= image_tag(current_user.twitter_avatar)%><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <% if user_signed_in? %>
-              <li><%= image_tag(current_user.twitter_avatar)%></li>
-              <Logged in as <strong><%= current_user.username %></strong>
-              <li><%= link_to 'Notifications' %></li>
+              <!--<li><%= link_to 'Notifications' %></li> -->
               <li><%= link_to 'Settings' , edit_user_registration_path%></li>
               <li><%= link_to 'Logout' , destroy_user_session_path, method: :delete%></li>
-            <% else %>
-              <li><%= link_to 'Sign in with Twitter' , user_omniauth_authorize_path(:twitter)%></li>
-            <% end %>
           </ul>
         </li>
+        <% else %>
+          <li><%= link_to 'Sign in' , user_omniauth_authorize_path(:twitter)%></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
