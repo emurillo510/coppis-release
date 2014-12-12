@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>Add button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Add-button" sketch:type="MSLayerGroup">
+            <circle id="Oval-1" stroke="#FFFFFF" stroke-width="2" fill="#FF0000" sketch:type="MSShapeGroup" cx="15" cy="15" r="15"></circle>
+            <rect id="Rectangle-2" fill="#FFFFFF" sketch:type="MSShapeGroup" x="14" y="7" width="2" height="16"></rect>
+            <rect id="Rectangle-3" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(15.000000, 15.000000) rotate(-90.000000) translate(-15.000000, -15.000000) " x="14" y="7" width="2" height="16"></rect>
+        </g>
+    </g>
+</svg>
