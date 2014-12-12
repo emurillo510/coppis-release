@@ -8,6 +8,10 @@ class PagesController < ApplicationController
 	  end
    end
 
+   def register
+      render template: "devise/registrations/register"
+   end
+
    private
 
    #Active Record Reputation System
@@ -16,7 +20,7 @@ class PagesController < ApplicationController
       @post.add_or_update_evaluation(:votes, value, current_user)
       redirect_to :back
    end
-end
+
 
    def guidelines
    end
@@ -32,3 +36,4 @@ end
 
    def contact
    end
+end

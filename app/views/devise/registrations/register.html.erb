@@ -1,1 +1,33 @@
-REGISTER
+<div class="post-container">
+  <div class = "registration-banner">
+    <h1> Welcome to Coppis!</h1>
+    <h4> Thank you for signing up</h4>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <p>Please provide your email to complete registration </p>
+
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <div class="form-group">
+          <%= f.email_field :email, :required => true, class: "form-control", :autofocus => true, placeholder: "Email" %>
+        </div>
+      </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="form-group" id="form-button">
+      <%= f.submit "Continue", class: "btn btn-success" %>
+    </div>
+    <% end %>
+    </form>
+
+    <hr>
+    
+    <div class="delete-account"><%= link_to "Deactivate my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></div>
+
+</div>

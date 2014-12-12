@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   resources :products
 
-
-
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+ 
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"} 
   resources :posts do 
     resources :comments
     member { post :vote } #Active Record Reputation System  
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   get "tos" => "pages#tos"
   get "about" => "pages#about"
   get "contact" => "pages#contact"
-  get "register" => "devise#register"
+  get "register" => "pages#register"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

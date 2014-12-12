@@ -8,7 +8,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
      	    flash.notice = "Signed in!"
           sign_in user , :event => :authentication
 
-          
+
           
           if user.email.blank?
           redirect_to edit_user_registration_path
@@ -20,6 +20,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
      		   redirect_to new_user_registration_url
      end
 	end
+
+  def new
+    
+  end
+
 
   private
   def omniauth_params
