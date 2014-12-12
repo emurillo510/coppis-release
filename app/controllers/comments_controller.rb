@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by_query(params[:post_id])
     @comment = @post.comments.create!(comment_params)
     @comment.user_id = current_user.id #or whatever is your session name
     if @comment.save
