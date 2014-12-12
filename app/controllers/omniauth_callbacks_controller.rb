@@ -8,7 +8,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
      	    flash.notice = "Signed in!"
           sign_in user , :event => :authentication
 
-          if current_user.sign_in_count == 1
+          
+          
+          if user.email.blank?
           redirect_to edit_user_registration_path
           else
           redirect_to root_path

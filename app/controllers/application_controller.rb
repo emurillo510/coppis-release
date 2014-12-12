@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit({ roles: [] }, :email, :username, :password, :password_confirmation) }
   devise_parameter_sanitizer.for(:account_update) { |u| u.permit({ roles: [] }, :email, :username, :password, :password_confirmation) }
   end
+
+
+
+  def edit_user2
+    
+  end
   
   private
   # Overwriting the sign_out redirect path method
