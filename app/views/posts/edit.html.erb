@@ -1,6 +1,6 @@
 <% if current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m") %>
 
-<%= render 'admin_edit' %>
+<%= render 'admin_edit' , locals: { query: params[:id] }%>
 
 <% else %>
 <h1> You can't come here. :/</h1>
