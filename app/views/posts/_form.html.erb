@@ -37,40 +37,42 @@
 
 <% end %>
 </div>-->
-
-<div class = "panel panel-default" id="post-form">
-  <div class="panel-heading" id="post-form-header">
-    <h1 class="panel-title">Post a design</h1>
-  </div>
-  <div class = "post-body">
-  <%= bootstrap_form_for @post, control_col: "col-sm-2", html: {role: "form" , :multipart => true } do |f| %>
-    <% if @post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-        <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="post-form-container">
+  <div class = "panel panel-default" id="post-form">
+    <%= bootstrap_form_for @post, control_col: "col-sm-2", html: {role: "form" , :multipart => true } do |f| %>
+      <div class="panel-heading" id="post-form-header">
+        <h1 class="panel-title">Post a design</h1>
+      </div>
+      
+      <div class = "post-body">
+        <% if @post.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
+
+        <div class="form-group" id="post-form-field">
+          <%= f.text_field :title , placeholder: " Design Name ", hide_label: true, :required => true, class: "form-control" %>
+        </div>
+        <div class="form-group" id="post-form-field">
+          <%= f.text_field :brand_name, placeholder: " Brand Name ", hide_label: true, :required => true, class: "form-control" %>
+        </div>
+        <div class="form-group" id="post-form-field">
+          <%= f.file_field :image, hide_label: true %>
+        </div>
+      </div>
+      <div class = "panel-footer" id="post-form-footer">
+        <div class="form-group" id="form-button">
+          <%= f.submit 'Submit' , class: 'btn btn-danger' %>
+        </div>
       </div>
     <% end %>
-
-  <div class="form-group" id="post-form-field">
-    <%= f.text_field :title , placeholder: " Design Name ", hide_label: true, :required => true, class: "form-control" %>
   </div>
-  <div class="form-group" id="post-form-field">
-    <%= f.text_field :brand_name, placeholder: " Brand Name ", hide_label: true, :required => true, class: "form-control" %>
-  </div>
-  <div class="form-group" id="post-form-field">
-    <%= f.file_field :image, hide_label: true %>
-  </div>
-  </div>
-  <div class = "panel-footer" id="post-form-footer">
-    <div class="form-group" id="form-button">
-      <%= f.submit 'Submit' , class: 'btn btn-danger' %>
-    </div>
-  </div>
-  <p class="help-block">Check out our <%= link_to 'Guidelines', guidelines_path, class: "blue-link", :target =>"_blank" %> for posting</p> 
-
-<% end %>
+  <div class="help-block">Check out our <%= link_to 'Guidelines', guidelines_path, class: "blue-link", :target =>"_blank" %> for posting</div> 
 </div>
+
