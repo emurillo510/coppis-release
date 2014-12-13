@@ -40,15 +40,14 @@
 }
 
 .help-block{
-	float:right;
+	float: right;
 	font-style: italic;
-	font-size: 14px;
+	font-size: .8em;
+	padding-top: 8px;
+	padding-right: 19px;
 }
 
-.help-block span{
-	text-decoration: underline ;
-	color: blue;
-}
+
 
 .post {
 			max-width: 600px;

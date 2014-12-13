@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require rails_bootstrap_form
  *= require_self
  */
 
@@ -68,9 +69,41 @@ body {
   margin-bottom: 20px;
 }
 
-#form-button {
-	margin-bottom: 80px;
+/* POST FORM STARTS */
+#post-form {
+	width: 440px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lighten(#000, 95%);
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
+	box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
 }
+
+#post-form-header {
+	margin-bottom: 20px;
+	text-align: center;
+	background-color: lighten(#000, 85%);
+}
+#post-form-header h1 {
+	font-weight: 800;
+	color: lighten(#000, 50%);
+}
+
+#post-form-field {
+	width: 400px;
+	margin: 0 auto;
+}
+
+#post-form-footer {
+	background-color: lighten(#000, 95%);
+	height: 52px;
+}
+#form-button {
+	float: right;
+	margin-bottom: 0px;
+}
+/* POST FORM ENDS */
 
 .upvote {
 	background-color: #ecf0f1 !important; 
@@ -103,11 +136,11 @@ body {
 }
 a.upvote-link:visited  {
     text-decoration: none;
-    color: red !important;
+    color: #ea3835 !important;
 }
 a.upvote-link:hover {
     text-decoration: none;
-    color: red;
+    color: #ea3835;
 }
 
 .blue-link {
