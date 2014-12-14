@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    respond_with(@post)
+    redirect_to :back
   end
 
 #### custom utility methods ####
