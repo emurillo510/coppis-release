@@ -1,0 +1,38 @@
+<div class = "post-edit">
+<% if !current_user.nil? && (current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m")) %>
+<span class="admin-toggle"><%= link_to "Posts", admin_path %> | <strong>Brands</strong></span>
+<br>
+<br>
+
+<table class = "admin-table">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Location</th>
+      <th>Website</th>
+      <th>Description</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <td><%= truncate(brand.name, :length => 15) %></td>
+        <td><%= truncate(brand.location, :length => 15) %></td>
+        <td><%= truncate(brand.website, :length => 15) %></td>
+        <td><%= truncate(brand.description, :length => 15) %></td>
+        <td><%= link_to 'Show', brand, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_brand_path(brand), class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Destroy', brand, class: "btn btn-default btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+
+<h1>You are not authorized to view this page.<h1>
+<% end %>
+</div>

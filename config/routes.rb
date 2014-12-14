@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "queue" => "pages#queue"
   get "recent" => "home#recent"
   get "admin" => "posts#admin_page"
+  get "admin/brands" => "brands#admin_page"
   get "guidelines" => "pages#guidelines"
   get "privacypolicy" => "pages#privacypolicy"
   get "tos" => "pages#tos"

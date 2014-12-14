@@ -14,40 +14,27 @@ Add a comment to this line
 
   <h1>Editing post id: <%= params[:id] %></h1>
   <div class="field">
-    <%= f.text_field :title , placeholder: " Design Name " %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.text_field :brand_name, placeholder: " Brand Name " %>
+    <%= f.label :brand_name %><br>
+    <%= f.text_field :brand_name %>
   </div>
   <div class="field">
-  <%= f.label :image , "Upload Photo" %>
-  <%= f.file_field :image%>
+    <%= f.label :image %><br>
+    <%= f.file_field :image%>
   </div>
   <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name , placeholder: " This won't be here "%>
-  </div>
-  <div class="field">
-    <%= f.label :vote_count %><br>
-    <%= f.number_field :vote_count , placeholder: " This won't be here " %>
-  </div>
-  <div class="field">
-    <%= f.label :comment_count  %><br>
-    <%= f.number_field :comment_count , placeholder: " This won't be here "%>
-  </div>
-  <div class="field">
-    <h3>is_public</h3>
+    <p>is_public</p>
   	<%= f.label :is_public, "Yes", :value => true %>
     <%= f.radio_button :is_public, true %>
     <%= f.label :is_public, "No", :value => false %>
     <%= f.radio_button :is_public, false %>
   </div>
+  <br>
   <div class="field">
     <%= f.submit 'Submit' %>
   </div>
-
-  <%= link_to 'Show', @post %> |
-  <%= link_to 'Back', admin_path %>
- 
 <% end %>
 </div>

@@ -1,6 +1,7 @@
-<h1>Editing brand</h1>
+<% if current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m") %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @brand %> |
-<%= link_to 'Back', brands_path %>
+<% else %>
+<h1>You are not authorized to view this page.</h1>
+<% end %>

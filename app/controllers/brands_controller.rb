@@ -34,7 +34,11 @@ class BrandsController < ApplicationController
 
   def destroy
     @brand.destroy
-    respond_with(@brand)
+    redirect_to :back
+  end
+
+  def admin_page
+    @brands = Brand.all.order(:name)
   end
 
   private
