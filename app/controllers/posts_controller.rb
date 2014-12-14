@@ -6,8 +6,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-   @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true).order("votes DESC")
-    respond_with(@posts)
+    redirect_to admin_path
   end
 
   def show
@@ -32,7 +31,7 @@ class PostsController < ApplicationController
     # Find brand and assign one if doesn't exist
     @brand = Brand.find_by(name: post_params[:brand_name])
     if @brand.nil?
-      @brand = Brand.create(name: post_params[:brand_name])
+      @brand = Brand.create(name: post_params[:brand_name], query: post_params[:brand_name].downcase.gsub(" ", "-"))
     end
 
     # Assign brand and user
@@ -46,8 +45,12 @@ class PostsController < ApplicationController
   def update
     newQuery = params[:id]
     @post = Post.find_by_query(newQuery)
+    @brand = @post.brand
+
     @post.update(post_params)
     @post.update(query: post_params[:title].downcase.gsub(" ", "-"))
+
+    @brand.update(name: post_params[:brand_name], query: post_params[:brand_name].downcase.gsub(" ", "-"))
     respond_with @post
   end
 

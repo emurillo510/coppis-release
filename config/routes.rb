@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :products
 
  
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"} 
-  resources :posts, except: :index do 
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"}
+  resources :posts do
     resources :comments
     member { post :vote } #Active Record Reputation System  
   end

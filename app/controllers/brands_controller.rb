@@ -43,7 +43,7 @@ class BrandsController < ApplicationController
 
   private
     def set_brand
-      @brand = Brand.find(params[:id])
+      @brand = Brand.find_by_query(params[:id])
     end
 
     def brand_params
