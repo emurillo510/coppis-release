@@ -17,3 +17,6 @@
 
 # Ignore all .DS_Store
 /.DS_Store
+
+# Ignore assets saved locally
+/public/system/* 
