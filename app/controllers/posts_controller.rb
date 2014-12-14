@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find_by_query(params[:id])
   end
 
   def create
@@ -43,8 +44,11 @@ class PostsController < ApplicationController
   end
 
   def update
+    newQuery = params[:id]
+    @post = Post.find_by_query(newQuery)
     @post.update(post_params)
-    respond_with(@post)
+    @post.update(query: post_params[:title].downcase.gsub(" ", "-"))
+    respond_with @post
   end
 
   def destroy
@@ -66,7 +70,7 @@ class PostsController < ApplicationController
   private
     def set_post
       #@post = Post.find_with_reputation(:votes, :all).where(:id => params[:query_id]).first keep this here for future reference.
-      @post = Post.find_with_reputation(:votes, :all, { :query => "query" }).first
+      @post = Post.find_with_reputation(:votes, :all).where(:query => params[:id]).first
     end
 
     def post_params
