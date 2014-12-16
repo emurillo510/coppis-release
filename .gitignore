@@ -19,4 +19,4 @@
 /.DS_Store
 
 # Ignore assets saved locally
-/public/system/* 
+/public/system/posts
