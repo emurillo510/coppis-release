@@ -1,4 +1,4 @@
-<% if current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m") %>
+<% if !current_user.nil? && (current_user.username == ("Elton_Murillo") || ("cmconsing") || ("menandro_m")) %>
 
 <%= render 'admin_edit' , locals: { query: params[:id] }%>
 
