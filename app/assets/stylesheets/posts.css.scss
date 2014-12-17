@@ -44,11 +44,13 @@
 			max-width: 600px;
 			margin-left: auto;
 			margin-right: auto;
+			padding-top: 5px;
+			padding-bottom: 5px;
 		}
 		.description a {
 			font-size: 1em;
 			margin-right: 4px;
-			color: black;
+			color: #333333;
 		}
 		.brand-name {
 			color: #7f8c8d;
@@ -69,7 +71,11 @@
 			font-size: .8em;
 			font-weight: 700;
 			line-height: 2em;
+			color: #7f8c8d;
 		}	
+		.comment-count a {
+			color: #7f8c8d;
+		}
 		ul {
 			list-style-type: none;
 		}

@@ -27,7 +27,7 @@ $grayLight:                           gray;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$color-text-link: black;
+$color-text-link: #333333;
 $secondary-color-text-link: #7f8c8d;
 
 /* set body font */
@@ -158,10 +158,12 @@ body {
 	top:0; 
 	left:0; 
 	text-decoration:none; 
+	color: #262626;
 }
 .vote-count {
 	position: relative;
 	top: 12px;
+	color: #262626;
 }
 .glyphicon-chevron-up {
 	padding: 8px;
@@ -175,6 +177,9 @@ a.upvote-link:visited  {
 a.upvote-link:hover {
     text-decoration: none;
     color: #ea3835;
+}
+.post-title a {
+	color: #262626;
 }
 
 .blue-link {
