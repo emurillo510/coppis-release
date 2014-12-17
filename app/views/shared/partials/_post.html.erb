@@ -2,23 +2,24 @@
   
   <!-- upvote div -->
   <div class="upvote">
-
-     <%= link_to "" , vote_post_path(post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up" , 'aria-hidden' => true%><br>
+     <%= link_to "" , vote_post_path(post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up" , 'aria-hidden' => true%>
       <span class="vote-count"><%= post.votes.to_i %></span>
   </div>
 
-  <!-- url this will be the image -->
-  <div class="url">
-    <!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
-    <span class="post-tagline description"><%= link_to post.title, post_path(post) %></span>
-    <span class="post-brandname brand-name">(<%=link_to post.brand_name, post.brand %>)</span>
-  </div>
+  <div class="post-content">
+    <div class="url">
+      <!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
+      <span class="post-tagline description"><%= link_to post.title, post_path(post) %></span>
+      <span class="post-brandname brand-name">(<%=link_to post.brand_name, post.brand %>)</span>
+    </div>
 
-  <!-- user post -->
-  <div class="post-user">
-    <span>submitted by </span><span class="post-username user-name"><%=post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
-  </div>
+    <!-- user post -->
+    <div class="post-user">
+      <span>submitted by </span><span class="post-username user-name"><%=post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
+    </div>
 
-  <!-- comment count -->
-  <span class="view-discussion"><p class="comment-count"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></p></span>
+    <!-- comment count -->
+    <span class="view-discussion"><p class="comment-count"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></p>
+    </span>
+  </div>
 </li> <!-- end of post -->

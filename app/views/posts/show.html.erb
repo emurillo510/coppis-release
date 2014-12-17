@@ -4,7 +4,7 @@
   <!-- start of post -->
 		<!-- upvote div -->
 		<div class="upvote">
-     <%= link_to "" , vote_post_path(@post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up" , 'aria-hidden' => true%><br>
+     <%= link_to "" , vote_post_path(@post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up" , 'aria-hidden' => true%>
       <span class="vote-count"><%= @post.votes.to_i %></span>
   </div>
 
