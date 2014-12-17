@@ -38,7 +38,10 @@ gem 'minitest', '~> 5.4.3'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-gem 'unicorn', '~> 4.8.3'
+#gem 'unicorn', '~> 4.8.3'
+
+# BBD testing for Ruby
+gem 'rspec', '~> 3.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
