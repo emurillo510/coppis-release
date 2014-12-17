@@ -24,5 +24,8 @@ module Coppis2
     # This setting tells Rails to allow any exceptions to be handled by another appliication.
     # Which is in this case the application router.
     config.exceptions_app = self.routes
+
+    # Required for Heroku
+    config.assets.initialize_on_precompile = true
   end
 end
