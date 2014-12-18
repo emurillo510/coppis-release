@@ -54,7 +54,11 @@
 		}
 		.brand-name {
 			color: #7f8c8d;
-			font-weight: 700;
+			font-weight: 400;
+		}
+		.brand-name a {
+			color: #7f8c8d;
+			font-weight: 400;
 		}
 		.post-content {
 			display: block;
@@ -63,10 +67,7 @@
 		.url {
 			
 		}
-		.user-name {
-			font-weight: 700;
-			color: #7f8c8d;
-		}
+	
 		.comment-count {
 			font-size: .8em;
 			font-weight: 700;
