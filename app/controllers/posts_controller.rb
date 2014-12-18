@@ -67,7 +67,7 @@ class PostsController < ApplicationController
   end
 
   def admin_page
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 
   private

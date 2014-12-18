@@ -38,7 +38,7 @@ class BrandsController < ApplicationController
   end
 
   def admin_page
-    @brands = Brand.all.order(:name)
+    @brands = Brand.all.order(:name).paginate(:page => params[:page], :per_page => 20)
   end
 
   private
