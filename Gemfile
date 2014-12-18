@@ -38,7 +38,7 @@ gem 'minitest', '~> 5.4.3'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-#gem 'unicorn', '~> 4.8.3'
+gem 'unicorn', '~> 4.8.3'
 
 
 
@@ -85,12 +85,10 @@ group :development, :test do
 
 	 # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
 	 #gem 'capybara', '~> 2.4.4'
-	 gem 'unicorn', '~> 4.8.3'
 end
 
 group :production do
      gem 'pg'
      gem 'rails_12factor'
-     gem 'unicorn', '~> 4.8.3'
 end
 
