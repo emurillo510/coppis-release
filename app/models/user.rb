@@ -13,7 +13,9 @@ class User < ActiveRecord::Base
   ###############
   ##validations##
   ###############
+
   validates_uniqueness_of :username
+  validates_presence_of :email
   validates_uniqueness_of :email, :allow_blank => true, :allow_nil => true
 
   #Active Record Reputation System
@@ -27,6 +29,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.oauth_token = auth.credentials.token
       user.twitter_avatar = auth.info.image
+      user.email = ""
     end
   end
 
