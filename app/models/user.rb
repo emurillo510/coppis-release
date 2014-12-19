@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.oauth_token = auth.credentials.token
       user.twitter_avatar = auth.info.image
-      user.save
     end
   end
 
