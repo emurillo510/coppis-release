@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab00a22a-bed2-4e79-aa7b-47dc394c31c0" name="Default" comment="Added Brand Routes, Redirect posts/ =&gt; admin_path" />
+    <list default="true" id="ab00a22a-bed2-4e79-aa7b-47dc394c31c0" name="Default" comment="Added Brand Routes, Redirect posts/ =&gt; admin_path">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20141219080543_change_user_column_email.rb" />
+    </list>
     <ignored path="coppis_2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/public/system/" />
