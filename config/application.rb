@@ -20,5 +20,14 @@ module Coppis2
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Required for Heroku
+    config.assets.initialize_on_precompile = true
+    
+    # This setting tells Rails to allow any exceptions to be handled by another appliication.
+    # Which is in this case the application router.
+    config.exceptions_app = self.routes
+
+
   end
 end

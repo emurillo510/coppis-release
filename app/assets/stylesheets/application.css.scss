@@ -27,7 +27,7 @@ $grayLight:                           gray;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$color-text-link: black;
+$color-text-link: #333333;
 $secondary-color-text-link: #7f8c8d;
 
 /* set body font */
@@ -84,14 +84,26 @@ body {
   margin-bottom: 20px;
 }
 
+.alert-container {
+	max-width: 620px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 /* POST FORM STARTS */
 .post-form-container {
 	max-width: 440px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #post-form {
-	width: 440px;
+	max-width: 440px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
@@ -107,12 +119,14 @@ body {
 	background-color: lighten(#000, 85%);
 }
 #post-form-header h1 {
+	padding-top: 0px;
 	font-weight: 800;
 	color: lighten(#000, 50%);
 }
 
 #post-form-field {
-	width: 400px;
+	padding-left: 10px;
+	padding-right: 10px;
 	margin: 0 auto;
 }
 
@@ -133,13 +147,13 @@ body {
 
 .upvote {
 	background-color: #ecf0f1 !important; 
-	width: 50px;
-	height: 60px;
+	width: 34px;
+	height: 46px;
 	text-align: center;
 	padding-top: 10px;
 	border-radius: 4px;
 	float: left;
-	margin-right: 20px;
+	margin-right: 15px;
 	-webkit-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
 	-moz-box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
 	box-shadow: 0px 1px 2px 0px rgba(212,212,212,1);
@@ -154,11 +168,21 @@ body {
 	top:0; 
 	left:0; 
 	text-decoration:none; 
+	color: #262626;
+}
+.vote-count {
+	position: relative;
+	top: 12px;
+	color: #262626;
 }
 .glyphicon-chevron-up {
-	margin-top: 10px;
-	font-size: 1.5em;
+	padding: 8px;
+	font-size: 1.2em;
 	color: #95a5a6;
+}
+a.upvote-link  {
+    text-decoration: none;
+    color: #95a5a6;
 }
 a.upvote-link:visited  {
     text-decoration: none;
@@ -167,6 +191,9 @@ a.upvote-link:visited  {
 a.upvote-link:hover {
     text-decoration: none;
     color: #ea3835;
+}
+.post-title a {
+	color: #262626;
 }
 
 .blue-link {

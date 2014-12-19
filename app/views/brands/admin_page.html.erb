@@ -30,6 +30,7 @@
     <% end %>
   </tbody>
 </table>
+<nav><ul id="paginate"><%= will_paginate @posts, renderer: BootstrapPagination::Rails %></ul></nav>
 
 <% else %>
 

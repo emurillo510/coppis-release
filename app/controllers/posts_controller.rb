@@ -51,7 +51,7 @@ class PostsController < ApplicationController
     @post.update(query: post_params[:title].downcase.gsub(" ", "-"))
 
     @brand.update(name: post_params[:brand_name], query: post_params[:brand_name].downcase.gsub(" ", "-"))
-    respond_with @post
+    redirect_to admin_path
   end
 
   def destroy
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
   end
 
   def admin_page
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
 
   private

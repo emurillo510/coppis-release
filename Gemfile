@@ -38,7 +38,9 @@ gem 'minitest', '~> 5.4.3'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+# gem 'unicorn', '~> 4.8.3'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -77,6 +79,12 @@ gem 'rinku', '~> 1.7.3'
 # Development Environment Set-Up
 group :development, :test do
      gem 'sqlite3'
+     
+    # BBD testing for Ruby
+	 #gem 'rspec-rails', '~> 3.1.0'
+
+	 # Capybara is an integration testing tool for rack based web applications. It simulates how a user would interact with a website
+	 #gem 'capybara', '~> 2.4.4'
 end
 
 group :production do

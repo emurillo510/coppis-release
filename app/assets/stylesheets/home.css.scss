@@ -37,16 +37,20 @@ ul { list-style-type: none; }
 /* styling links */
 a{
     text-decoration: none;
+    color: #333333;
 
 }
 a:link {
     text-decoration: none; 
+    color: #333333;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #333333;
 }
 
 a:active {
     text-decoration: underline;
+    color: #333333;
 }

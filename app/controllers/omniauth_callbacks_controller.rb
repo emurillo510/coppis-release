@@ -5,15 +5,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
      user = User.from_omniauth(request.env["omniauth.auth"])
   
      if user.persisted?
-     	    flash.notice = "Signed in!"
+          
           sign_in user , :event => :authentication
 
-
-          
           if user.email.blank?
-          redirect_to edit_user_registration_path
+             redirect_to edit_user_registration_path
           else
-          redirect_to root_path
+             redirect_to root_path
           end
      else
      	     session["devise.user_attributes"] = user.attributes
@@ -24,7 +22,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def new
     
   end
-
 
   private
   def omniauth_params
