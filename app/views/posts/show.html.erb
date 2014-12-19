@@ -21,9 +21,10 @@
 		<div class="section-title"><%=@post.comments.length%> comments</div>
 		
 		<%= render :partial => @post.comments %>
-      <% if ["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username  %>
-			<%= render 'comments/form' %>
-		<% else %>
+
+      <% if (!current_user.nil?) && (["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username ) %>
+          <%= render 'comments/form' %>
+      <% else %>
 			<div class="alert alert-warning" role="alert">Commenting is limited for now but will open to those receommended by the community.</div>
-		<% end %>
+      <% end %>
 	</div>

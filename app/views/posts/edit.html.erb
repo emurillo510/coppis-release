@@ -1,7 +1,5 @@
-<% if ["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username  %>
-
-<%= render 'admin_edit' , locals: { query: params[:id] }%>
-
+<% if (!current_user.nil?) && (["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username ) %>
+    <%= render 'admin_edit' , locals: { query: params[:id] }%>
 <% else %>
 <h1>You are not authorized to view this page.</h1>
 <% end %>

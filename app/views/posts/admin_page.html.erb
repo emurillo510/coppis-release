@@ -1,5 +1,5 @@
 <div class = "post-edit">
-  <% if ["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username  %>
+  <% if (!current_user.nil?) && (["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username ) %>
 <span class="admin-toggle"><strong>Posts</strong> | <%= link_to "Brands", "admin/brands" %></span>
 <br>
 <br>
