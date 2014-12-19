@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.oauth_token = auth.credentials.token
       user.twitter_avatar = auth.info.image
-      user.email = ""
+      user.email = auth.info.email
     end
   end
 
