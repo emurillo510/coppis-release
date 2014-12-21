@@ -1,7 +1,7 @@
-<li class="post">
+ <li class="post">
   
   <!-- upvote div -->
-  <% if current_user.voted_for?(post) %>
+  <% if !current_user.nil? && current_user.voted_for?(post) %>
     <div class="upvote">
        <%= link_to "" , vote_post_path(post, type: "up"), method: "post" , class: "glyphicon glyphicon-chevron-up yes-vote" , 'aria-hidden' => true%>
         <span class="vote-count"><%= post.votes.to_i %></span>
