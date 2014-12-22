@@ -139,7 +139,6 @@
 			float: left;
 		}
 		.section {
-			margin-left: 49px;
 			margin-top: 40px;
 		}
 		.section-title {
@@ -161,8 +160,12 @@
 		.comments {
 			padding-left: 0px;
 		}
+		.comment-content {
+			padding-left: 50px;
+		}
 		.comment-field {
 			margin-bottom: 20px;
+			margin-left: 50px;
 		}
 
 .admin-table table, td, th {

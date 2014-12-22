@@ -1,7 +1,7 @@
 <%= form_for [@post, Comment.new] do |f| %>
   
   <div class="comment-field">
-    <%= f.text_area :content, placeholder: "Join the conversation", class: "form-control" %>
+    <%= f.text_area :content, placeholder: "Join the conversation", class: "form-control", help: "(Limit 2000 characters)", rows: 2, maxlength: 2000 %>
   </div>
   
   <div class="actions">

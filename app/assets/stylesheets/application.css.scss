@@ -167,8 +167,6 @@ body {
 	height:100%; 
 	top:0; 
 	left:0; 
-	text-decoration:none; 
-	color: #262626;
 }
 .vote-count {
 	position: relative;
@@ -178,19 +176,30 @@ body {
 .glyphicon-chevron-up {
 	padding: 8px;
 	font-size: 1.2em;
-	color: #95a5a6;
 }
-a.upvote-link  {
+a.no-vote:link {
     text-decoration: none;
     color: #95a5a6;
 }
-a.upvote-link:visited  {
+a.no-vote:visited  {
+    text-decoration: none;
+    color: #95a5a6;
+}
+a.no-vote:hover {
+    text-decoration: none;
+    color: #ea3835;
+}
+a.no-vote:active {
+    text-decoration: none;
+    color: #ea3835;
+}
+a.yes-vote:link  {
     text-decoration: none;
     color: #ea3835 !important;
 }
-a.upvote-link:hover {
-    text-decoration: none;
-    color: #ea3835;
+a.yes-vote:visited  {
+  text-decoration: none;
+  color: #ea3835 !important;
 }
 .post-title a {
 	color: #262626;
