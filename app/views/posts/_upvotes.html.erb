@@ -1,0 +1,11 @@
+<% if user_signed_in? && current_user.upvotes?(post) %>
+  <div class="upvote">
+  		<span><%= link_to "", post_upvote_path(post), method: :delete, remote: true, class: "yes-vote glyphicon glyphicon-chevron-up" %>
+  		<span class="vote-count"><%= post.upvotes.count %></span></span>
+  </div>
+<% else %>
+	<div class="upvote">
+  		<span><%= link_to "", post_upvote_path(post), method: :post, remote: true, class: "no-vote glyphicon glyphicon-chevron-up" %>
+  		<span class="vote-count"><%= post.upvotes.count %></span></span>
+  </div>
+<% end %>

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   ###############
   has_many :posts
   has_many :comments, dependent: :destroy
+  has_many :upvotes
   
   ###############
   ##validations##
@@ -52,8 +53,12 @@ class User < ActiveRecord::Base
   	end
   end
 
+  def upvotes?(post)
+    post.upvotes.where(user_id: id).any?
+  end
+
   #Active Record Reputation System
   def voted_for?(post)
-  evaluations.where(target_type: post.class, target_id: post.id).present?
+    evaluations.where(target_type: post.class, target_id: post.id).present?
   end
 end
