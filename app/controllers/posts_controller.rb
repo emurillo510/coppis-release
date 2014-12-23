@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote,]
 
   before_filter :authenticate_user!, only: [:new, :create, :update, :destory, :vote]
 
@@ -23,12 +23,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
 
-    # Assign query_id here, used for custom url links.
-    @post.query = post_params[:title].downcase.gsub(" ", "-")
+    @post = Post.find_by_query(post_params[:title].downcase.gsub(" ", "-"))
 
-    # Find brand and assign one if doesn't exist
+    if @post.nil?
+       @post = Post.new(post_params)
+       @post.query = post_params[:title].downcase.gsub(" ", "-")
+    else
+       @post = Post.new(post_params)
+       @post.query = post_params[:title].downcase.gsub(" ", "-") << Random.rand(99).to_s
+    end
+
+    # Find brand and assign one if doesn't existrandom.rand string ruby
     @brand = Brand.find_by(name: post_params[:brand_name])
     if @brand.nil?
       @brand = Brand.create(name: post_params[:brand_name], query: post_params[:brand_name].downcase.gsub(" ", "-"))
