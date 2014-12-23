@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote, :upvote]
 
-  before_filter :authenticate_user!, only: [:new, :create, :update, :destory, :vote]
+  before_filter :authenticate_user!, only: [:new, :create, :update, :destory, :vote, :upvote]
 
   respond_to :html
 
@@ -73,6 +73,10 @@ class PostsController < ApplicationController
     end
 
     redirect_to :back
+  end
+
+  def upvote
+    post.upvotes.where(user_id: id).any?
   end
 
   def admin_page
