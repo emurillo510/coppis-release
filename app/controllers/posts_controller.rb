@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
+
     respond_with(@post)
   end
 
@@ -93,7 +94,9 @@ class PostsController < ApplicationController
   private
     def set_post
       #@post = Post.find_with_reputation(:votes, :all).where(:id => params[:query_id]).first keep this here for future reference.
-      @post = Post.find_with_reputation(:votes, :all).where(:query => params[:id]).first
+      #@post = Post.find_with_reputation(:votes, :all).where(:query => params[:id]).first
+
+      @post = Post.find_by_query(params[:id])
     end
 
     def post_params

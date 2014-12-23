@@ -37,7 +37,7 @@ class Post < ActiveRecord::Base
 
    # Replaces /:id to this.title (post title)
    def query_id
-      title.downcase.gsub(" ", "-")  
+      query.downcase.gsub(" ", "-")
    end
 
 end
