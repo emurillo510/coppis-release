@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :vote,]
 
-  before_filter :authenticate_user!, only: [:new, :create, :update, :destory, :vote]
+  before_filter :authenticate_user!, only: [:new, :create, :update, :destory, :vote, :upvote]
 
   respond_to :html
 
@@ -80,6 +80,11 @@ class PostsController < ApplicationController
 
     redirect_to :back
   end
+  
+  #This might not be needed; delete if needed
+  #def upvote
+  #  post.upvotes.where(user_id: id).any?
+  #end
 
   def admin_page
     @posts = Post.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)

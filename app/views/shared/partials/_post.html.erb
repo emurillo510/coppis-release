@@ -1,17 +1,9 @@
  <li class="post">
   
   <!-- upvote div -->
-  <% if !current_user.nil? && current_user.voted_for?(post) %>
-    <div class="upvote">
-       <%= link_to "" , vote_post_path(post, type: "up"), method: "post" , class: "glyphicon glyphicon-chevron-up yes-vote" , 'aria-hidden' => true%>
-        <span class="vote-count"><%= post.votes.to_i %></span>
-    </div>
-  <% else %>
-    <div class="upvote">
-      <%= link_to "" , vote_post_path(post, type: "up"), method: "post" , class: "glyphicon glyphicon-chevron-up no-vote" , 'aria-hidden' => true%>
-      <span class="vote-count"><%= post.votes.to_i %></span>
-    </div>
-  <% end %>
+  <div id="upvote">
+    <%= render partial: "posts/upvotes", locals: {post: post} %>
+  </div>
 
   <div class="post-content">
     <div class="url">

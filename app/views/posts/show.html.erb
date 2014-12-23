@@ -3,10 +3,9 @@
   <div class="post-photo"><%= image_tag @post.image.url(:medium) %></div>
   <!-- start of post -->
 		<!-- upvote div -->
-		<div class="upvote">
-     <%= link_to "" , vote_post_path(@post, type: "up"), method: "post" , class: "upvote-link glyphicon glyphicon-chevron-up" , 'aria-hidden' => true%>
-      <span class="vote-count"><%= @post.votes.to_i %></span>
-  </div>
+  	<div id="upvote">
+  		<%= render partial: "upvotes", locals: {post: @post} %>
+  	</div>
 
 	<div class="url">
 		<span class="post-tagline description"><%= @post.title %></span>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219080543) do
+ActiveRecord::Schema.define(version: 20141221030844) do
 
   create_table "brands", force: true do |t|
     t.string   "name"
@@ -111,6 +111,13 @@ ActiveRecord::Schema.define(version: 20141219080543) do
   add_index "rs_reputations", ["reputation_name", "target_id", "target_type"], name: "index_rs_reputations_on_reputation_name_and_target", unique: true
   add_index "rs_reputations", ["reputation_name"], name: "index_rs_reputations_on_reputation_name"
   add_index "rs_reputations", ["target_id", "target_type"], name: "index_rs_reputations_on_target_id_and_target_type"
+
+  create_table "upvotes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
