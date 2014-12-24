@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @post = Post.find_by_query(post_params[:title].downcase.gsub(" ", "-"))
 
     if @post.nil?
@@ -55,7 +54,7 @@ class PostsController < ApplicationController
     @brand = @post.brand
 
     @post.update(post_params)
-    @post.update(query: post_params[:title].downcase.gsub(" ", "-"))
+    #@post.update(query: post_params[:title].downcase.gsub(" ", "-"))
 
     @brand.update(name: post_params[:brand_name], query: post_params[:brand_name].downcase.gsub(" ", "-"))
     redirect_to admin_path
