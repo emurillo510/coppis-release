@@ -1,4 +1,3 @@
-<% @post ||= post %>
 <% if user_signed_in? && current_user.upvotes?(post) %>
   <div class="upvote">
   		<span><%= link_to "", post_upvote_path(post), method: :delete, remote: true, class: "yes-vote glyphicon glyphicon-chevron-up" %>

@@ -1,1 +1,1 @@
-$("#upvote").html("<%=j render partial: "posts/upvotes", locals: {post: @post} %>");
+$('#post_<%= @post.id %>_upvote').html("<%=j render partial: "posts/upvotes", locals: {post: @post} %>");
