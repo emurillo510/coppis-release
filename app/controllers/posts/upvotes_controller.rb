@@ -3,7 +3,6 @@ class Posts::UpvotesController < ApplicationController
 	before_action :set_post
 
 	def create
-		logger.debug "POST CREATE #{@post.inspect}"
 		@post.upvotes.where(user_id: current_user.id).first_or_create
 
 		respond_to do |format|
@@ -13,8 +12,6 @@ class Posts::UpvotesController < ApplicationController
 	end
 
 	def destroy
-
-		logger.debug "POST DESTORY #{@post.inspect}"
 		@post.upvotes.where(user_id: current_user.id).destroy_all
 
 		respond_to do |format|
