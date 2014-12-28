@@ -9,7 +9,7 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @posts = Post.find_with_reputation(:votes, :all).where(:is_public => true, :brand_id => params[:id]).order("votes DESC")
+    @posts = Post.trending.where(:is_public => true, :brand_id => params[:id])
     respond_with(@brand)
   end
 
