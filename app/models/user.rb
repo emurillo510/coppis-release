@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   #Active Record Reputation System
-  has_many :evaluations, class_name: "RSEvaluation", as: :source
-  has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
+  #has_many :evaluations, class_name: "RSEvaluation", as: :source
+  #has_reputation :votes, source: {reputation: :votes, of: :posts}, aggregated_by: :sum
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

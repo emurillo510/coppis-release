@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
    belongs_to :brand
    has_many :comments
    has_many :upvotes
-   
+
+
    ####################
    #set default values#
    ####################
@@ -20,13 +21,10 @@ class Post < ActiveRecord::Base
    #Paperclip for easy upload management for ActiveRecord
    has_attached_file :image, :styles => { :medium => "600x400>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
-   #Active Record Reputation System
-   has_reputation :votes, source: :user, aggregated_by: :sum
    
    # Initializes vote_ciunt and comment_count 0.
    def init
-      self.vote_count  ||= 0 # will set the default value only if it's nil
+      self.upvotes_count  ||= 0 # will set the default value only if it's nil
       self.comment_count ||= 0 # will set the default value only if it's nil
    end
 
@@ -38,6 +36,10 @@ class Post < ActiveRecord::Base
    # Replaces /:id to this.title (post title)
    def query_id
       query.downcase.gsub(" ", "-")
+   end
+
+   def self.trending
+      order('upvotes_count DESC')
    end
 
 end

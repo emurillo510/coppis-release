@@ -21,7 +21,6 @@ GEM
       activemodel (= 4.1.8)
       activesupport (= 4.1.8)
       arel (~> 5.0.0)
-    activerecord-reputation-system (3.0.1)
     activesupport (4.1.8)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -182,7 +181,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-reputation-system
   aws-sdk (~> 1.59.1)
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.1)

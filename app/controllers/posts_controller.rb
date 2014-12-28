@@ -66,20 +66,6 @@ class PostsController < ApplicationController
   end
 
 #### custom utility methods ####
-  def vote
-    value = params[:type] == "up" ? 1 : -1
-  
-
-    have_voted = @post.evaluators_for(:votes) << @post.evaluators_for(:votes)
-
-    unless have_voted.include?(current_user) # vote
-      @post.add_or_update_evaluation(:votes, value, current_user)
-    else                                      # unvote
-      @post.delete_evaluation(:votes, current_user)
-    end
-
-    redirect_to :back
-  end
   
   #This might not be needed; delete if needed
   #def upvote

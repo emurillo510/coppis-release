@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20141221030844) do
     t.string   "user_name"
     t.text     "description"
     t.text     "comment"
-    t.integer  "vote_count",         default: 0
+    t.integer  "upvotes_count",      default: 0
     t.integer  "comment_count"
     t.integer  "user_id"
     t.integer  "brand_id"
@@ -65,52 +65,6 @@ ActiveRecord::Schema.define(version: 20141221030844) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "rs_evaluations", force: true do |t|
-    t.string   "reputation_name"
-    t.integer  "source_id"
-    t.string   "source_type"
-    t.integer  "target_id"
-    t.string   "target_type"
-    t.float    "value",           default: 0.0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "data"
-  end
-
-  add_index "rs_evaluations", ["reputation_name", "source_id", "source_type", "target_id", "target_type"], name: "index_rs_evaluations_on_reputation_name_and_source_and_target", unique: true
-  add_index "rs_evaluations", ["reputation_name"], name: "index_rs_evaluations_on_reputation_name"
-  add_index "rs_evaluations", ["source_id", "source_type"], name: "index_rs_evaluations_on_source_id_and_source_type"
-  add_index "rs_evaluations", ["target_id", "target_type"], name: "index_rs_evaluations_on_target_id_and_target_type"
-
-  create_table "rs_reputation_messages", force: true do |t|
-    t.integer  "sender_id"
-    t.string   "sender_type"
-    t.integer  "receiver_id"
-    t.float    "weight",      default: 1.0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rs_reputation_messages", ["receiver_id", "sender_id", "sender_type"], name: "index_rs_reputation_messages_on_receiver_id_and_sender", unique: true
-  add_index "rs_reputation_messages", ["receiver_id"], name: "index_rs_reputation_messages_on_receiver_id"
-  add_index "rs_reputation_messages", ["sender_id", "sender_type"], name: "index_rs_reputation_messages_on_sender_id_and_sender_type"
-
-  create_table "rs_reputations", force: true do |t|
-    t.string   "reputation_name"
-    t.float    "value",           default: 0.0
-    t.string   "aggregated_by"
-    t.integer  "target_id"
-    t.string   "target_type"
-    t.boolean  "active",          default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "data"
-  end
-
-  add_index "rs_reputations", ["reputation_name", "target_id", "target_type"], name: "index_rs_reputations_on_reputation_name_and_target", unique: true
-  add_index "rs_reputations", ["reputation_name"], name: "index_rs_reputations_on_reputation_name"
-  add_index "rs_reputations", ["target_id", "target_type"], name: "index_rs_reputations_on_target_id_and_target_type"
 
   create_table "upvotes", force: true do |t|
     t.integer  "user_id"
@@ -142,20 +96,5 @@ ActiveRecord::Schema.define(version: 20141221030844) do
 
   add_index "users", ["email"], name: "index_users_on_email"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "votes", force: true do |t|
-    t.integer  "votable_id"
-    t.string   "votable_type"
-    t.integer  "voter_id"
-    t.string   "voter_type"
-    t.boolean  "vote_flag"
-    t.string   "vote_scope"
-    t.integer  "vote_weight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
 
 end
