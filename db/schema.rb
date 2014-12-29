@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141221030844) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
-    t.string   "content"
+    t.text     "content",    limit: 2000
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
