@@ -1,0 +1,36 @@
+<div class = "post-edit">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+Add a comment to this line
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>Editing user id: <%= params[:id] %></h1>
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <p>is_member</p>
+  	<%= f.label :is_member, "Yes", :value => true %>
+    <%= f.radio_button :is_member, true %>
+    <%= f.label :is_member, "No", :value => false %>
+    <%= f.radio_button :is_member, false %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>
+</div>
