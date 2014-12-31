@@ -20,8 +20,8 @@
         <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><%= user.is_member %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Destroy', user, class: "btn btn-default btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_usermanage_path(user), class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Destroy', usermanage_path(user), class: "btn btn-default btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

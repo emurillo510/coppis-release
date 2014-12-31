@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'errors/internal_server_error'
 
   resources :brands , :except => [:index]
-  resources :users
+  resources :usermanage, :controller => "users" , :except => [:index]
   resources :products
 
  
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "admin" => "posts#admin_page"
   get "admin/brands" => "brands#admin_page"
   get "admin/users" => "users#admin_page"
+  get "admin/:id/" => "users#edit"
   get "guidelines" => "pages#guidelines"
   get "privacypolicy" => "pages#privacypolicy"
   get "tos" => "pages#tos"

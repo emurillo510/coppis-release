@@ -1,6 +1,7 @@
 <% if ["Elton_Murillo","cmconsing","menandro_m"].include? current_user.username  %>
 
-<%= render 'form' %>
+
+<%= render 'form' , locals: {user: @user} %>
 
 <% else %>
 <h1>You are not authorized to view this page.</h1>
