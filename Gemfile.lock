@@ -73,6 +73,8 @@ GEM
     jwt (1.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    masonry-rails (0.2.4)
+      railties
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.4.3)
@@ -189,6 +191,7 @@ DEPENDENCIES
   devise (~> 3.4.1)
   jbuilder (~> 2.0)
   jquery-rails
+  masonry-rails
   minitest (~> 5.4.3)
   omniauth (~> 1.2.2)
   omniauth-instagram (~> 1.0.1)

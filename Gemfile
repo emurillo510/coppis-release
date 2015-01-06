@@ -75,6 +75,10 @@ gem 'aws-sdk', '~> 1.59.1'
 # converts all links inside of body of text
 gem 'rinku', '~> 1.7.3'
 
+# Masonary GEM
+
+gem 'masonry-rails'
+
 
 # Development Environment Set-Up
 group :development, :test do
