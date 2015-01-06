@@ -19,10 +19,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
      end
 	end
 
-  def new
-    
-  end
-
   private
   def omniauth_params
     params.require(:auth).permit(:provider,:uid, :oauth_token, :oauth_verifier)

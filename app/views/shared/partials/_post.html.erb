@@ -1,24 +1,45 @@
  <li class="post">
-  
-  <!-- upvote div -->
-  <div id="post_<%=post.id %>_upvote">
-    <%= render partial: "posts/upvotes", locals: {post: post} %>
-  </div>
 
-  <div class="post-content">
-    <div class="url">
-      <!--<a class="post-url title" href="/l/c079d297e7" target="_blank">Image goes here</a> -->
-      <span class="post-title description"><%= link_to post.title, post_path(post) %></span>
-      <span class="post-brandname brand-name">(<%= post.brand_name %>)</span>
+ <div class="box panel panel-default col-xs-3">
+
+  <a href="file:///profiles/9">
+
+    <%= image_tag post.image.url(:medium) %>
+
+
+    <div class="panel-body">
+
+        <div class="card-tagline">
+          <p>
+            <strong><%= link_to post.title, post_path(post) %></strong><br>
+            (<%= post.brand_name %>)
+          </p>
+        </div><br><br>
+      </div>
+   
+    </a>
+
+    <div class="upvote">
+        <a href="file:///profiles/9"></a>
+      <a class="no-vote glyphicon glyphicon-chevron-up" href="file:///posts/new"></a>
+        <span class="vote-count">1</span>
     </div>
 
-    <!-- user post -->
+  <!-- user post -->
     <div class="post-user">
-      <span>submitted by </span><span class="post-username user-name"><%=post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago </span>
+      <span> submitted by </span>
+    <span class="post-username user-name"> <%=post.user.username%> </span>
+    <br>
+    <span class="timestamp"> <%= time_ago_in_words(post.created_at) %> ago </span>
     </div>
 
     <!-- comment count -->
-    <span class="view-discussion"><p class="comment-count"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></p>
+    <span class="view-discussion">
+    <p class="comment-count">
+      <a href="file:///posts/ambassador-black-tee"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></a>
+    </p>
     </span>
-  </div>
-</li> <!-- end of post -->
+    
+</div>
+  
+</li>
