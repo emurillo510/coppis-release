@@ -221,6 +221,7 @@ a { color: inherit; }
      padding-right: 0px;
      padding-bottom: 0px;
      padding-left: 0px;
+     height: 40px;
  }
 
  .card-name p {
@@ -260,4 +261,6 @@ a { color: inherit; }
     .comment-count-card a {
        color: #7f8c8d;
     }
-
+.vote-card{
+    margin-top: 15px;
+}

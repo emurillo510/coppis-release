@@ -1,49 +1,50 @@
  <li class="post">
 
- <div class="box panel panel-default masonry-brick">
+<div class="box panel panel-default masonry-brick">
 
-  <a href="file:///profiles/9">
+<a href="file:///profiles/9">
 
-    <%= image_tag post.image.url(:medium) %>
+<%= image_tag post.image.url(:medium) %>
 
 
-    <div class="panel-body-card">
+  <div class="panel-body-card">
 
-        <div class="card-tagline">
-          <p>
-            <strong><%= link_to post.title, post_path(post) %></strong><br>
-            (<%= post.brand_name %>)
-          </p>
-        </div><br><br>
-      </div>
+    <div class="card-tagline">
+      <p>
+      <strong><%= link_to post.title, post_path(post) %></strong><br>
+      (<%= post.brand_name %>)
+      </p>
+    </div><br><br>
+  </div>
 
-       <div class="post-user-card">
-      <span> submitted by </span>
+  <div class="post-user-card">
+    <span> submitted by </span>
     <span class="post-username user-name"> <%=post.user.username%> </span>
   </div>
-   
-    </a>
 
-    <div class="upvote">
-        <a href="file:///profiles/9"></a>
-      <a class="no-vote glyphicon glyphicon-chevron-up" href="file:///posts/new"></a>
-        <span class="vote-count">1</span>
-    </div>
+  </a>
+<div class="vote-card">
+  <div class="upvote">
+    <a href="file:///profiles/9"></a>
+    <a class="no-vote glyphicon glyphicon-chevron-up" href="file:///posts/new"></a>
+    <span class="vote-count">1</span>
+  </div>
 
   <!-- user post -->
-   <div>
+  <div>
     <br>
     <span class="timestamp"> <%= time_ago_in_words(post.created_at) %> ago </span>
-    </div>
+  </div>
 
-    <!-- comment count -->
-    <span class="view-discussion">
-    <p class="comment-count-card">
-      <a href="file:///posts/ambassador-black-tee"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></a>
-    </p>
-    </span>
-
-    
+  <!-- comment count -->
+<div>
+  <span class="view-discussion">
+  <p class="comment-count-card">
+  <a href="file:///posts/ambassador-black-tee"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></a>
+  </p>
+  </span>
+</div>
+</div>
 </div>
   
 </li>
