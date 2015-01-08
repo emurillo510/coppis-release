@@ -7,7 +7,7 @@
     <%= image_tag post.image.url(:medium) %>
 
 
-    <div class="panel-body">
+    <div class="panel-body-card">
 
         <div class="card-tagline">
           <p>
@@ -16,6 +16,11 @@
           </p>
         </div><br><br>
       </div>
+
+       <div class="post-user-card">
+      <span> submitted by </span>
+    <span class="post-username user-name"> <%=post.user.username%> </span>
+  </div>
    
     </a>
 
@@ -26,19 +31,18 @@
     </div>
 
   <!-- user post -->
-    <div class="post-user-card">
-      <span> submitted by </span>
-    <span class="post-username user-name"> <%=post.user.username%> </span>
+   <div>
     <br>
     <span class="timestamp"> <%= time_ago_in_words(post.created_at) %> ago </span>
     </div>
 
     <!-- comment count -->
     <span class="view-discussion">
-    <p class="comment-count">
+    <p class="comment-count-card">
       <a href="file:///posts/ambassador-black-tee"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></a>
     </p>
     </span>
+
     
 </div>
   

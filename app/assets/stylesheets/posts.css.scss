@@ -183,6 +183,7 @@ a { color: inherit; }
      border-top-left-radius: 0.3em;
      border-bottom-right-radius: 0.3em;
      border-bottom-left-radius: 0.3em;
+     padding: 0px;
   }
 
 
@@ -215,11 +216,11 @@ a { color: inherit; }
    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
  }
 
- .panel-body {
+ .panel-body-card {
      padding-top: 0px;
-     padding-right: 15px;
-     padding-bottom: 15px;
-     padding-left: 15px;
+     padding-right: 0px;
+     padding-bottom: 0px;
+     padding-left: 0px;
  }
 
  .card-name p {
@@ -234,12 +235,12 @@ a { color: inherit; }
 
  .card-tagline p {
      line-height: 1.2;
-     position: absolute;
+    
      top: 208px;
      left: 15px;
      font-size: 1em;
      margin-right: 10px;
-     margin-left: 35px;
+     margin-left: 5px;
      text-align: left;
  }
 
@@ -248,4 +249,15 @@ a { color: inherit; }
      bottom: 0px;
      left: 55px;
  }
+
+   .comment-count-card { 
+       font-size: .8em;
+       font-weight: 700;
+       line-height: 2em;
+       color: #7f8c8d;
+       padding-left: 54px;
+    }   
+    .comment-count-card a {
+       color: #7f8c8d;
+    }
 
