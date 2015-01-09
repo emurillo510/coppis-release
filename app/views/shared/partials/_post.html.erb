@@ -2,10 +2,7 @@
 
 <div class="box panel panel-default masonry-brick">
 
-<a href="file:///profiles/9">
-
-<%= image_tag post.image.url(:medium) %>
-
+<%= content_tag(:a, image_tag(post.image.url(:medium)) , :href => post_path(post)) %>
 
   <div class="panel-body-card">
 
