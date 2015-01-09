@@ -20,11 +20,11 @@
   </div>
 
   </a>
-<div class="vote-card">
-  <div class="upvote">
-    <a href="file:///profiles/9"></a>
-    <a class="no-vote glyphicon glyphicon-chevron-up" href="file:///posts/new"></a>
-    <span class="vote-count">1</span>
+  
+  <div class="vote-card">
+    <div id="post_<%=post.id %>_upvote">
+      <%= render partial: "posts/upvotes", locals: {post: post} %>
+    </div>
   </div>
 
   <!-- user post -->
