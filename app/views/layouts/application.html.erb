@@ -21,11 +21,13 @@ mixpanel.init("0c77ca51735e18a34d8a75fd0cf461b6");</script><!-- end Mixpanel -->
 		mixpanel.track("post_upvote_path");
 
 	</script>
+  
+    <%= render "layouts/partials/header" %>
+    <%# render "layouts/partials/deviseNotice" %>
+    
+    <%= yield %>
 
-<%= render "layouts/partials/header" %>
-<%# render "layouts/partials/deviseNotice" %>
-<%= yield %>
+    <%= render "layouts/partials/footer" %>
 
-<%= render "layouts/partials/footer" %>
 </body>
 </html>

@@ -8,6 +8,7 @@
 	</div>
 </div>
 <!-- post wrapper -->
+<div class="jumbo">
 <ul class="posts-group">
 <!-- start of post -->
   <% @posts.each do |post| %>
@@ -16,4 +17,5 @@
 
   <% end %>
 </ul>
+</div>
 <nav><ul id="paginate"><%= will_paginate @posts, renderer: BootstrapPagination::Rails %></ul></nav>
