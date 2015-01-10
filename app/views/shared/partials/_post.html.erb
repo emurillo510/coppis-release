@@ -2,46 +2,40 @@
 
 <div class="box panel panel-default masonry-brick">
 
-<%= content_tag(:a, image_tag(post.image.url(:medium)) , :href => post_path(post)) %>
+  <%= content_tag(:a, image_tag(post.image.url(:medium)) , :href => post_path(post)) %>
 
   <div class="panel-body-card">
 
     <div class="card-tagline">
       <p>
-      <strong><%= link_to post.title, post_path(post) %></strong><br>
-      (<%= post.brand_name %>)
+      <span><strong><%= link_to post.title, post_path(post) %></strong>
+      (<%= post.brand_name %>)</span>
       </p>
-    </div><br><br>
-  </div>
-
-  <div class="post-user-card">
-    <span> submitted by </span>
-    <span class="post-username user-name"> <%=post.user.username%> </span>
-  </div>
-
-  </a>
-  
-  <div class="vote-card">
-    <div id="post_<%=post.id %>_upvote">
-      <%= render partial: "posts/upvotes", locals: {post: post} %>
     </div>
-  </div>
 
-  <!-- user post -->
+    <div class="vote-card">
+      <div id="post_<%=post.id %>_upvote">
+        <%= render partial: "posts/upvotes", locals: {post: post} %>
+      </div>
+    </div>
+
+    <div class="post-user-card">
+    <div>
+      <span class="post-username user-name"> submitted by <strong><%=post.user.username%></strong> </span>
+    </div>
+    <!-- user post -->
+    <div>
+      <span class="timestamp-card"> <%= time_ago_in_words(post.created_at) %> ago </span>
+    </div>
+
+      <!-- comment count -->
+    <div>
+      <span class="comment-count-card">
+        <%=link_to post.comments.length.to_s+" comments", post_path(post) %>
+      </span>
+    </div>
+    </div>
   <div>
-    <br>
-    <span class="timestamp"> <%= time_ago_in_words(post.created_at) %> ago </span>
-  </div>
-
-  <!-- comment count -->
-<div>
-  <span class="view-discussion">
-  <p class="comment-count-card">
-  <a href="file:///posts/ambassador-black-tee"><%=link_to post.comments.length.to_s+" comments", post_path(post) %></a>
-  </p>
-  </span>
-</div>
-</div>
 </div>
   
 </li>
