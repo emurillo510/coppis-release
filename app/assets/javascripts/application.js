@@ -17,3 +17,13 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+$(window).load(function(){
+  $('.posts-group').masonry({
+    // options
+
+
+
+
+
+  });
+});
