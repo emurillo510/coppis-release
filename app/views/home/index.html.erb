@@ -9,13 +9,15 @@
 </div>
 <!-- post wrapper -->
 
-<ul class="posts-group ">
-<!-- start of post -->
-  <% @posts.each do |post| %>
-  
-  <%= render partial: "shared/partials/post",  locals: { post: post } %>
+<div id="center">
+	<ul class="posts-group ">
+	<!-- start of post -->
+	  <% @posts.each do |post| %>
+	  
+	  <%= render partial: "shared/partials/post",  locals: { post: post } %>
 
-  <% end %>
-</ul>
+	  <% end %>
+	</ul>
+</div>
 
 <nav><ul id="paginate"><%= will_paginate @posts, renderer: BootstrapPagination::Rails %></ul></nav>
