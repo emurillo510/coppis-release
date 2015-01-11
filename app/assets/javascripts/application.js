@@ -17,14 +17,11 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).load(function(){
+$(window).load(function(){
   $('.posts-group').masonry({
     // options
 
-    itemSelector: '.box',
-    columnWidth: 200,
-    isAnimated: !Modernizr.csstransitions,
-    isFitWidth: true
+
 
 
 
