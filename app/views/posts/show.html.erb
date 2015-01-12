@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="post-user">
-		<span>submitted by </span><span class="post-username user-name"><%=@post.user.username%></span><span> </span><span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
+		<span class="post-username user-name">submitted by <strong><%=@post.user.username%></strong></span> <span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
 	</div>
 
 	<div class="section post-comments">
