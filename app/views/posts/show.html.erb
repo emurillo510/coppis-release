@@ -3,9 +3,11 @@
   <div class="post-photo"><%= image_tag @post.image.url(:medium) %></div>
   <!-- start of post -->
 		<!-- upvote div -->
+ 
   	<div id="post_<%=@post.id %>_upvote">
   		<%= render partial: "upvotes", locals: {post: @post} %>
   	</div>
+ 
 
 	<div class="url">
 		<span class="post-tagline description"><%= @post.title %></span>
@@ -24,6 +26,6 @@
       <% if !current_user.nil? && current_user.is_member == true %>
           <%= render 'comments/form' %>
       <% else %>
-			<div class="alert alert-warning" role="alert">Commenting is limited for now but will open to those recommended by the community.</div>
+			<div class="alert alert-warning" role="alert">Commenting is currently limited. Please visit our <%= link_to "guidelines", guidelines_path %> page to get more information on gaining access to this feature.</div>
       <% end %>
 	</div>
