@@ -1,9 +1,4 @@
 <!-- wrapper for submit new post
-<div class = "registration-banner">
-<h3> Find a design you want others to see?</h1>
-<h4> Post it here! </h4>
-</div>
-
 <div class = "post-new-wrapper">
 <%= bootstrap_form_for @post, control_col: "col-sm-6", html: {role: "form" , :multipart => true } do |f| %>
   <% if @post.errors.any? %>

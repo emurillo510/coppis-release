@@ -2,7 +2,7 @@
 	<p id="notice"><%= notice %></p>
   <div class="post-photo"><%= image_tag @post.image.url(:medium) %></div>
   <!-- start of post -->
-		<!-- upvote div -->
+  <!-- upvote div -->
  
   	<div id="post_<%=@post.id %>_upvote">
   		<%= render partial: "upvotes", locals: {post: @post} %>

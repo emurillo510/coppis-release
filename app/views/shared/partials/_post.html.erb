@@ -20,7 +20,11 @@
     </div>
 
     <div class="post-user-card">
+      <% if post.user.full_name?  %>
+      <span class="post-username user-name"> submitted by <strong><%=post.user.full_name%></strong> </span>
+      <% else %>
       <span class="post-username user-name"> submitted by <strong><%=post.user.username%></strong> </span>
+      <% end %>
     <!-- user post -->
     <div>
       <span class="timestamp-card"> <%= time_ago_in_words(post.created_at) %> ago </span>
