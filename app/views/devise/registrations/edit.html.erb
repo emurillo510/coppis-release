@@ -9,24 +9,24 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
-    <p>Please provide your email to complete registration </p>
+    <p>Please provide some additional information to complete your registration</p>
 
     <form class="form-horizontal" role="form">
       <div class="form-group">
         <div class="form-group">
-          <%= f.email_field :email, :required => true, class: "form-control", :autofocus => true, placeholder: "Email" %>
+          <%= f.email_field :email, :required => true, class: "form-control", :autofocus => true, placeholder: "Email (required)" %>
         </div>
       </div>
 
       <div class="form-group">
         <div class="form-group">
-          <%= f.text_field :full_name, class: "form-control", placeholder: "Full Name" %>
+          <%= f.text_field :full_name, class: "form-control", placeholder: "Full Name (required)" %>
 		 </div>
 
        
       <div class="form-group">
 			<div class="form-group">
-          <%= f.text_field :title, class: "form-control", placeholder: "Job title, Company" %>
+          <%= f.text_field :title, class: "form-control", placeholder: "Position, Company" %>
 		 </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -55,19 +55,19 @@
 
     <form class="form-horizontal" role="form">
         <div class="form-group">
-          <p><strong>Email</strong></p>
-          <%= f.email_field :email, :required => true, class: "form-control", :autofocus => true, placeholder: "Email" %>
+    
+          <%= f.email_field :email, :required => true, class: "form-control", :autofocus => true, placeholder: "Email (required)" %>
 		 </div>
 
 
         <div class="form-group">
-          <p><strong>Full name</strong></p>
-          <%= f.text_field :full_name, class: "form-control", placeholder: "Full name" %>
+     
+          <%= f.text_field :full_name, class: "form-control", placeholder: "Full name (required)" %>
 		 </div>
 
         <div class="form-group">
-          <p><strong>Job Title, Company</strong></p>
-          <%= f.text_field :title, class: "form-control", placeholder: "Job Title, company" %>
+       
+          <%= f.text_field :title, class: "form-control", placeholder: "Position, Company" %>
         </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
