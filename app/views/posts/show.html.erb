@@ -15,7 +15,11 @@
 	</div>
 
 	<div class="post-user">
-		<span class="post-username user-name">submitted by <strong><%=@post.user.username%></strong></span> <span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
+      <% if @post.user.full_name?  %>
+			<span class="post-username user-name"> submitted by <strong><%=@post.user.full_name%></strong> </span> <span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
+      <% else %>
+			<span class="post-username user-name">submitted by <strong><%=@post.user.username%></strong></span> <span class="timestamp"><%= time_ago_in_words(@post.created_at) %> ago </span>
+		<% end %>
 	</div>
 
 	<div class="section post-comments">
