@@ -3,7 +3,7 @@
 		<% if comment.user.full_name.nil? %>
 			<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span class="comment-user"><%= comment.user.username %></span>
 		<% else %>
-			<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span id="fullname"><strong><%= comment.user.full_name.to_s %> </span></strong> <span class="comment-title"><%= comment.user.title.to_s %></span>
+			<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span class="fullname"><strong><%= comment.user.full_name.to_s %> </span></strong> <span class="comment-title"><%= comment.user.title.to_s %></span>
 		<% end %>
     <br/>
 
