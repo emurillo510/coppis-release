@@ -157,6 +157,11 @@ ul {
     font-weight: 700;
     color: #7f8c8d;
 }
+
+.comment-title {
+    font-weight: 700;
+    color: #7f8c8d;
+}
 .timestamp {
     color: #7f8c8d;
     
@@ -276,7 +281,8 @@ a.yes-vote:active  {
     }
 
    .timestamp {
-	    color: #7f8c8d;		
+	    color: #7f8c8d;	
+        font-size: 10px	
    }
  
    .comment-count { 
@@ -403,4 +409,8 @@ a { color: inherit; }
     .vote-card{
     margin-top: 15px;
     margin-right: 20px;
+}
+
+#fullname{
+    color: black;
 }

@@ -3,11 +3,15 @@
 		<% if comment.user.full_name.nil? %>
 			<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span class="comment-user"><%= comment.user.username %></span><span class="timestamp"> <%= time_ago_in_words(comment.created_at) %> ago</span>
 		<% else %>
-			<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span class="comment-user"><%= comment.user.full_name.to_s + ' ' + comment.user.title.to_s %></span><span class="timestamp"> <%= time_ago_in_words(comment.created_at) %> ago</span>
+			<span class="user-photo"><%= image_tag comment.user.twitter_avatar %></span><span id="fullname"><strong><%= comment.user.full_name.to_s %> </span></strong> <span class="comment-title"><%= comment.user.title.to_s %></span>
 		<% end %>
     <br/>
 
     <div class="comment-content"><%= Rinku.auto_link(comment.content, :all, 'target = "_blank"').html_safe %>
+		
+		<div class="timestamp"> <%= time_ago_in_words(comment.created_at) %> ago</div>
+
+
   </ol>
 <% end %>
 
