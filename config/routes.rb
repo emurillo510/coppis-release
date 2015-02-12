@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # Application Routes
   root to: "home#index"
   get "queue" => "pages#queue"
-  get "recent" => "home#recent"
+  get "trending" => "home#trending"
   get "admin" => "posts#admin_page"
   get "admin/brands" => "brands#admin_page"
   get "admin/users" => "users#admin_page"
