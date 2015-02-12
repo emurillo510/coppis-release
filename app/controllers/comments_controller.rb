@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create!(comment_params)
     @comment.user_id = current_user.id #or whatever is your session name
     if @comment.save
+      NotifyDro.notify.deliver
       redirect_to @post
     else
       flash.now[:danger] = "error"
