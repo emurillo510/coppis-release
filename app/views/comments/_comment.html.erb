@@ -7,10 +7,9 @@
 		<% end %>
     <br/>
 
-    <div class="comment-content"><%= Rinku.auto_link(comment.content, :all, 'target = "_blank"').html_safe %>
+    <div class="comment-content"><%= Rinku.auto_link( simple_format(comment.content), :all, 'target = "_blank"').html_safe %>
 		
 		<div class="timestamp"> <%= time_ago_in_words(comment.created_at) %> ago</div>
-
 
   </ol>
 <% end %>
