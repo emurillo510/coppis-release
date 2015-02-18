@@ -45,6 +45,7 @@ class PostsController < ApplicationController
     @post.user = current_user #Second association is set here
 
     @post.save
+    NotifyDro.notify_post_creation(current_user,@post).deliver
     redirect_to root_path, notice: "Thank you for your submission. It is under review. We will notify you if it is approved."
   end
 

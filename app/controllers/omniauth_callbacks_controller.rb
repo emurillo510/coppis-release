@@ -5,7 +5,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
      user = User.from_omniauth(request.env["omniauth.auth"])
   
      if user.persisted?
-          
+
+          NotifyDro.notify_user_creation(user).deliver
           sign_in user , :event => :authentication
 
           if user.email.blank?
